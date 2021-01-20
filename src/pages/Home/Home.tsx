@@ -5,6 +5,7 @@ import PopularRestaurants from "../../components/Cards/restaurantCard"
 import SignatureDish from "../../components/Cards/dishCard"
 import IconMeaning from "../../components/IconsMeaning/iconMeaning";
 import About from "../../components/About/About"
+import WeeklyChef from "../../components/WeeklyChef/WeeklyChef"
 
 const Home = () => {
     return (
@@ -31,6 +32,7 @@ const Home = () => {
             <div className="icon-meaning">
             <IconMeaning />
             </div>
+            <WeeklyChef />
         </div>
     )
 }
