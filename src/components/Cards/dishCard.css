@@ -1,0 +1,42 @@
+.dish-card-container {
+  width: 360px;
+  overflow: hidden;
+  margin: 1vh;
+  margin-top: 6vh;
+}
+
+.dish-card-header{
+  text-align: center;
+  font-size: 1.563rem;
+  letter-spacing: 1.77px;
+  margin-bottom: 2vh;
+}
+.dish-image-container img {
+  overflow: hidden;
+  height: auto;
+}
+
+.dish-card-content {
+  background-color: #f9f4ea;
+  text-align: center;
+  font-family: HelveticaNeue;
+}
+
+.dish-card-content h2 {
+  font-size: 2rem;
+  letter-spacing: 2.67px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.dish-card-content p {
+  /* font-size: 1.563rem; */
+  letter-spacing: 1.67px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.dish-dish-price {
+  font-size: 1.563;
+  margin-top: 2vh;
+}

@@ -1,7 +1,8 @@
+
 .hero-container{
     display: flex;
     justify-content: center;
-    background-image: "../images/hero1.png";
+    /* background-image: url("../../../public/images/hero1.png"); */
 }
 .hero-content {
     width: 21rem;

@@ -1,0 +1,47 @@
+.icon-meaning-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+.meaning-header {
+  font-family: HelveticaNeue;
+  font-size: 1.875rem;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.icons-group {
+    display: flex;
+    justify-content: center;
+}
+.spicy-icon .vegetarian-icon .vegan-icon {
+    display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.spicy-icon img {
+    width: 80px;
+    height: 61px;
+    margin: 0 0 29px;
+    object-fit: contain;
+
+}
+
+.vegetarian-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 26.8px 30px 25.2px;
+    object-fit: contain;
+}
+
+.vegan-icon {
+    width: 67px;
+    height: 67px;
+    margin: 0 2.9px 26.6px 5.1px;
+    object-fit: contain;
+}

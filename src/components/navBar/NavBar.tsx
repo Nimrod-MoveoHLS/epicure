@@ -1,16 +1,18 @@
 import * as React from "react";
-import {useState}  from 'react';
+import { useState } from 'react';
 import "./navBar.css";
-// import Burger from "../Burger/burger"
+import BurgerMenu from "../BurgerMenu/burgerMenu"
 const NavBar = () => {
 
-  const [showLinks,setShowLinks] = useState<boolean>(true)
+  const [isShown, setIsShown] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setIsShown(!isShown) 
+   }
 
   return (
     <section className="navbar-container">
-      <img onClick ={() => setShowLinks(!showLinks)} src="../images/group-13.png" className="burger-icon" alt="burger-icon"></img>
-
-    {/* <Burger /> */}
+      <img onClick={handleClick} src="../images/group-13.png" className="burger-icon" alt="burger-icon"></img>
       <div className="left-nav">
         <img src="../images/logo.png" className="logo-icon" alt="logo-icon"></img>
         <div className="logo">EPICURE</div>
@@ -27,6 +29,7 @@ const NavBar = () => {
         <img src="../images/user-icon.png" className="user-icon" alt="user-icon"></img>
         <img src="../images/bag-icon.png" className="bag-icon" alt="bag-icon"></img>
       </div>
+      {isShown && <BurgerMenu setIsShown={handleClick}/>}
     </section>
   );
 };
