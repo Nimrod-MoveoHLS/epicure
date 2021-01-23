@@ -1,36 +1,79 @@
 import * as React from "react";
-import { useState } from 'react';
-import "./navBar.css";
-import BurgerMenu from "../BurgerMenu/burgerMenu"
+import { useState } from "react";
+import styled from "styled-components";
+import {
+  Wrapper,
+  LeftNav,
+  RightNav,
+  BurgerIcon,
+  LogoIcon,
+  Logo,
+  MenuLinks,
+  SearchContainer,
+  Search,
+  SearchIcon,
+  SearchIconMobile,
+  UserIcon,
+  BagIcon,
+  Input
+} from "./styled";
+import SideMenu from "../SideMenu/SideMenu";
+
+// import SideMenu from "../SideMenu/SideMenu"
+
 const NavBar = () => {
+  const [isShown, setIsShown] = useState<boolean>(false);
 
-  const [isShown, setIsShown] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setIsShown(!isShown) 
-   }
+  const toggle = () => {
+    setIsShown(!isShown);
+  };
 
   return (
-    <section className="navbar-container">
-      <img onClick={handleClick} src="../images/group-13.png" className="burger-icon" alt="burger-icon"></img>
-      <div className="left-nav">
-        <img src="../images/logo.png" className="logo-icon" alt="logo-icon"></img>
-        <div className="logo">EPICURE</div>
-        <a href="/" className="menu-link">Restaurants</a>
-        <a href="/" className="menu-link">Chefs</a>
-      </div>
-
-      <div className="right-nav">
-        <div className="search-container">
-          <input type="text" placeholder="Search for restaurant cuisne, chef" className="search"></input>
-          <img src="../images/search-icon.png" className="search-icon" alt="search-icon"></img>
-        </div>
-        <img src="../images/search-icon.png" className="search-icon-mobile" alt="search-icon-mobile"></img>
-        <img src="../images/user-icon.png" className="user-icon" alt="user-icon"></img>
-        <img src="../images/bag-icon.png" className="bag-icon" alt="bag-icon"></img>
-      </div>
-      {isShown && <BurgerMenu setIsShown={handleClick}/>}
-    </section>
+    <Wrapper>
+      <LeftNav>
+        <BurgerIcon>
+          <img
+            onClick={toggle}
+            src="../images/group-13.svg"
+            alt="burger-icon"
+          ></img>
+        </BurgerIcon>
+        <LogoIcon>
+          <img src="../images/logo.png" alt="logo-icon"></img>
+        </LogoIcon>
+        <Logo>EPICURE</Logo>
+        <MenuLinks>
+          <a href="/">Restaurants</a>
+        </MenuLinks>
+        <MenuLinks>
+          <a href="/">Chefs</a>
+        </MenuLinks>
+      </LeftNav>
+      <RightNav>
+        <SearchContainer>
+          <Search>
+            <Input
+              type="text"
+              placeholder="Search for restaurant cuisne, chef"
+            ></Input>
+          </Search>
+          <SearchIcon>
+            <img src="../images/search-icon.png" alt="search-icon"></img>
+          </SearchIcon>
+        </SearchContainer>
+        <SearchIconMobile>
+          <img src="../images/search-icon.png" alt="search-icon-mobile"></img>
+        </SearchIconMobile>
+        <UserIcon>
+          <img src="../images/user-icon.png" alt="user-icon"></img>
+        </UserIcon>
+        <BagIcon>
+          <img src="../images/bag-icon.png" alt="bag-icon"></img>
+        </BagIcon>
+      </RightNav>
+      {isShown && <SideMenu setIsShown={toggle} isShown={isShown} />}
+      {/* <SideMenu setIsShown={toggle} isShown={isShown}/> */}
+    </Wrapper>
   );
 };
 
