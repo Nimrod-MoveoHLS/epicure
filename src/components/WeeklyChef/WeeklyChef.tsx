@@ -69,8 +69,8 @@ const WeeklyChef = () => {
           expressed in the every detail of each and every dish.
         </p>
       </WeeklyContent>
-      <WeeklyChefRest>
-      </WeeklyChefRest>
+      {/* <WeeklyChefRest>
+      </WeeklyChefRest> */}
     </WeeklyContainer>
   );
 };

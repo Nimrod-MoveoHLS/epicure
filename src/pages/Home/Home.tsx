@@ -27,7 +27,7 @@ const Home = () => {
       <div className="icon-meaning">
         <IconMeaning />
       </div>
-      <WeeklyChef />
+      {/* <WeeklyChef /> */}
       <About />
     </HomeContainer>
   );
