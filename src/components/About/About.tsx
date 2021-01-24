@@ -43,7 +43,6 @@ const About = () => {
 
 export default About;
 
-
 const AboutContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -63,48 +62,49 @@ const AboutContainer = styled.section`
 const AboutBody = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 41px 483px 41px 485px;
+  padding-left: 25%;
+  padding-right: 25%;
   justify-content: center;
 
-@media only screen and (max-width: 550px) { 
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  width: 100%;
-  margin: 7px 0 32px;
-
-    }
+  @media only screen and (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    margin: 7px 0 32px;
+  }
 `;
 const AboutHeader = styled.div`
   display: flex;
   flex-direction: column;
   h1 {
     font-family: HelveticaNeue;
-    font-size: 30px;
+    font-size: 2rem;
   }
   p {
     font-family: HelveticaNeue;
-    font-size: 22px;
+    font-size: 1rem;
     text-align: left;
     width: 80%;
   }
 
-  @media only screen and (max-width: 550px) { 
-   h1 {
-    font-family: HelveticaNeue;
-    font-size: 24px;
-    text-align: center;
-margin-bottom: 2vh;
+  @media only screen and (max-width: 550px) {
+    h1 {
+      font-family: HelveticaNeue;
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 0.93px;
+      text-align: center;
+      margin-bottom: 2vh;
+    }
+    p {
+      font-family: HelveticaNeue;
+      font-size: 1.5rem;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2vh;
+    }
   }
-  p {
-    font-family: HelveticaNeue;
-    font-size: 13;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2vh;
-
-  }
-}
 `;
 
 const AboutContent = styled.div`
@@ -116,17 +116,16 @@ const AboutContent = styled.div`
     height: 166px;
     object-fit: contain;
   }
-  @media only screen and (max-width: 550px) { 
-  display: flex;
-  flex-direction: column;
-  width: 304px;
-img {
-  width: 137px;
-  height: 128px;
-  object-fit: contain;
-}
+  @media only screen and (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+    img {
+      width: 137px;
+      height: 128px;
+      object-fit: contain;
     }
-
+  }
 `;
 
 const DownloadBtns = styled.div`
@@ -134,10 +133,9 @@ const DownloadBtns = styled.div`
   flex-direction: row;
   margin-left: 25%;
   padding: 25px;
-  @media only screen and (max-width: 550px) { 
-margin: 0 auto;
-padding: 0;
-
+  @media only screen and (max-width: 550px) {
+    margin: 0 auto;
+    padding: 0;
   }
 `;
 
@@ -150,16 +148,15 @@ const AppleBtn = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-margin-right: 20px;
+  margin-right: 20px;
 
-@media only screen and (max-width: 550px) { 
-  width: 127px;
-  height: 37px;
-  padding: 5.6px 7.9px 5.1px 7.3px;
-  border-radius: 6.7px;
-  border: solid 0.5px black;
-}
-
+  @media only screen and (max-width: 550px) {
+    width: 127px;
+    height: 37px;
+    padding: 5.6px 7.9px 5.1px 7.3px;
+    border-radius: 6.7px;
+    border: solid 0.5px black;
+  }
 `;
 const AppleBtnContent = styled.div`
   display: flex;
@@ -169,15 +166,14 @@ const AppleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 550px) { 
-img {
-  width: 17px;
-  height: 22px;
-  margin: 0 9.7px 4.3px 0;
-  object-fit: contain;
-}
-}
-
+  @media only screen and (max-width: 550px) {
+    img {
+      width: 17px;
+      height: 22px;
+      margin: 0 9.7px 4.3px 0;
+      object-fit: contain;
+    }
+  }
 `;
 const GoogleBtn = styled.div`
   display: flex;
@@ -187,15 +183,15 @@ const GoogleBtn = styled.div`
   border-radius: 9.6px;
   border: solid 0.6px black;
   justify-content: space-evenly;
-align-items: center;
+  align-items: center;
 
-@media only screen and (max-width:550px) {
-  width: 126.8px;
-  height: 36.8px;
-  padding: 5px 12.2px 5.8px 10.5px;
-  border-radius: 6.7px;
-  border: solid 0.5px black;
-}
+  @media only screen and (max-width: 550px) {
+    width: 126.8px;
+    height: 36.8px;
+    padding: 5px 12.2px 5.8px 10.5px;
+    border-radius: 6.7px;
+    border: solid 0.5px black;
+  }
 `;
 const GoogleBtnContent = styled.div`
   display: flex;
@@ -205,14 +201,12 @@ const GoogleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width:550px) {
-
-  img {
-    width: 14px;
-  height: 18px;
-  margin: 4.8px 15.1px 3.2px 0;
-  object-fit: contain;
+  @media only screen and (max-width: 550px) {
+    img {
+      width: 14px;
+      height: 18px;
+      margin: 4.8px 15.1px 3.2px 0;
+      object-fit: contain;
+    }
   }
-  }
-
 `;

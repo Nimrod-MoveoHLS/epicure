@@ -95,7 +95,6 @@ const SearchContainer = styled.div`
   }
   input {
       opacity: 0.53;
-
     width: 511px;
     height: 48px;
     border: none;
@@ -108,6 +107,9 @@ const SearchContainer = styled.div`
     letter-spacing: 1.57px;
     text-align: center;
     color: black;
+    :focus {
+    outline: none;
+  }
   }
 
   @media only screen and (max-width: 550px) {

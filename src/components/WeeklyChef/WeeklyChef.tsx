@@ -2,53 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import PopularRestaurants from "../../components/Cards/restaurantCard";
 
-const WeeklyContainer = styled.section`
- width: 60%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5vh;
-`;
-const WeeklyHeader = styled.section`
-  display: flex;
-  justify-content: center;
 
-  h1 {
-    margin-bottom: 5vh;
-    font-family: HelveticaNeue;
-    font-size: 30px;
-    font-weight: 100;
-    letter-spacing: 2px;
-    text-align: center;
-    color: black;
-  }
-`;
-const WeeklyContent = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  p {
-    width: 540px;
-    height: 292px;
-    font-family: HelveticaNeue;
-    font-size: 25px;
-    line-height: 1.2;
-    letter-spacing: 1.08px;
-    text-align: justify;
-    color: black;
-  }
-  img {
-    width: 433px;
-    height: 338px;
-    object-fit: contain;
-  }
-`;
-
-
-const WeeklyChefRest = styled.div`
-
-`
 const WeeklyChef = () => {
   return (
     <WeeklyContainer>
@@ -76,3 +30,94 @@ const WeeklyChef = () => {
 };
 
 export default WeeklyChef;
+const WeeklyContainer = styled.section`
+ width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5vh;
+
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    align-items: center;
+  }
+
+`;
+const WeeklyHeader = styled.section`
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    margin-bottom: 2vh;
+    font-family: HelveticaNeue;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-align: center;
+    color: black;
+  }
+
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    align-items: center;
+h1 {
+    font-family: HelveticaNeue;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.93px;
+  text-align: center;
+}
+
+  }
+`;
+const WeeklyContent = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  p {
+    width: 540px;
+    height: 292px;
+    font-family: HelveticaNeue;
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 1.2;
+    letter-spacing: 1.08px;
+    text-align: justify;
+    color: black;
+  }
+  img {
+    width: 433px;
+    height: 338px;
+    object-fit: contain;
+  }
+
+
+  @media only screen and (max-width: 550px) {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  p{
+      margin-top: 2vh;
+    max-width: 325px;
+  height: 183px;
+  font-family: HelveticaNeue;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 1.04px;
+  text-align: center
+  }
+  img {
+    width: 334px;
+  height: 239.4px;
+    object-fit: contain;
+  }
+  }
+`;
+
+
+const WeeklyChefRest = styled.div`
+
+`
