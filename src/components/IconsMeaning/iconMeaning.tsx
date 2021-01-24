@@ -28,14 +28,22 @@ export default iconMeaning;
 
 const MeaningContainer = styled.section`
   height: 265px;
-  padding: 41px 483px 41px 485px;
+  padding-left:25%;
+  padding-right:25%;
   opacity: 0.9;
   background-color: #fafafa;
   align-items: center;
   text-align: center;
+  margin-top: 7vh;
 
   h2 {
     margin-bottom: 2vh;
+    font-family: HelveticaNeue;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.33;
+  letter-spacing: 1.25px;
+  text-align: center;
   }
 
   @media only screen and (max-width: 550px) {
@@ -49,7 +57,12 @@ const MeaningContainer = styled.section`
 
     h2 {
       margin-bottom: 2vh;
-      margin-top: 8vh;
+      margin-top: 4vh;
+      font-family: HelveticaNeue;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.93px;
+  text-align: center;
     }
   }
 `;

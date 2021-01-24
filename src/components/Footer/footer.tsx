@@ -6,8 +6,12 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   height: 100px;
   width: 100vw;
-  background-color: blue;
+
+  justify-content: center;
   ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     list-style: none;
     text-align: center;
     font-family: HelveticaNeue;
@@ -16,6 +20,7 @@ const FooterContainer = styled.footer`
   }
   li {
     margin: 2vw;
+    font-size: 1rem;
   }
   a:link {
     text-decoration: none;
@@ -26,10 +31,19 @@ const FooterContainer = styled.footer`
     color: black;
   }
 
-@media screen and (max-width:550px) {
-  height: 126px;
-  padding: 1px 0 23px;
-}  
+  @media screen and (max-width: 550px) {
+    height: 126px;
+    padding: 1px 0 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -37,20 +51,14 @@ const Footer = () => {
     <FooterContainer>
       <ul>
         <li>
-          <a href="/" className="footer-links">
-            Contact Us
-          </a>
+          <a href="/">Contact Us</a>
         </li>
         <li>
-          <a href="/" className="footer-links">
-            Term Of Use
-          </a>
+          <a href="/">Term Of Use</a>
         </li>
         <li>
           {" "}
-          <a href="/" className="footer-links">
-            Privacy Policy
-          </a>
+          <a href="/">Privacy Policy</a>
         </li>
       </ul>
     </FooterContainer>

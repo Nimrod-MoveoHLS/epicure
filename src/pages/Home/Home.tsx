@@ -24,10 +24,8 @@ const Home = () => {
       <RestLink>
         <a href="/">All Restaurants</a>
       </RestLink>
-      <div className="icon-meaning">
         <IconMeaning />
-      </div>
-      {/* <WeeklyChef /> */}
+      <WeeklyChef />
       <About />
     </HomeContainer>
   );
@@ -45,17 +43,21 @@ const PopularHeader = styled.div`
   text-align: center;
   margin-top: 15vh;
   h1{
-  font-family: HelveticaNeue;
-  font-size: 30px;
+    font-family: HelveticaNeue;
+  font-size: 2rem;
   font-weight: 100;
-  line-height: 1.57;
-  letter-spacing: 0.93px;
+  line-height: 1.33;
+  letter-spacing: 1.25px;
   text-align: center;
-  color: black
   }
 
   @media only screen and (max-width: 550px) {
     margin-top: 5vh;
+    font-family: HelveticaNeue;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.93px;
+  text-align: center;
 
 h1{
     font-size: 16px;

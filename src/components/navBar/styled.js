@@ -74,6 +74,19 @@ export const MenuLinks = styled.div`
   font-weight: 100;
   letter-spacing: 1.92px;
   color: black;
+  a:link {
+          text-decoration: none;
+          color: black;
+
+}
+           a:visited {
+         text-decoration: none;
+         color: black;
+}
+           a:hover {
+         text-decoration: none;
+         color: purple;
+}
 
   @media (max-width: 650px) {
     display: none;
@@ -117,6 +130,10 @@ export const Input = styled.input`
   width: 90%;
   border: none;
   font-size: 20px;
+
+  :focus {
+    outline: none;
+  }
 `;
 
 export const SearchIcon = styled.div`
