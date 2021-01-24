@@ -57,7 +57,7 @@ const MeaningContainer = styled.section`
 
     h2 {
       margin-bottom: 2vh;
-      margin-top: 8vh;
+      margin-top: 4vh;
       font-family: HelveticaNeue;
   font-size: 1rem;
   font-weight: 100;

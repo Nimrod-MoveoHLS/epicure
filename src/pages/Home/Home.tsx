@@ -24,9 +24,7 @@ const Home = () => {
       <RestLink>
         <a href="/">All Restaurants</a>
       </RestLink>
-      <div className="icon-meaning">
         <IconMeaning />
-      </div>
       <WeeklyChef />
       <About />
     </HomeContainer>

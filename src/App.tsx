@@ -11,7 +11,7 @@ import Footer from "./components/Footer/footer"
 function App() {
   return (
     <Router>
-          {/* <GlobalStyle/> */}
+          <GlobalStyle/>
     <div className="App">
       <NavBar />
    <Home />

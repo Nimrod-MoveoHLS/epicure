@@ -40,6 +40,8 @@ const WeeklyContainer = styled.section`
   @media only screen and (max-width: 550px) {
     width: 100%;
     align-items: center;
+    margin-top: 10vh;
+
   }
 
 `;

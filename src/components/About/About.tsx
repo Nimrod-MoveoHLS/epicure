@@ -52,7 +52,6 @@ const AboutContainer = styled.section`
 
   @media only screen and (max-width: 550px) {
     width: 300px;
-    height: 134px;
     padding: 0;
     opacity: 0.9;
     background-color: #fafafa;
@@ -91,7 +90,7 @@ const AboutHeader = styled.div`
   @media only screen and (max-width: 550px) {
     h1 {
       font-family: HelveticaNeue;
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 100;
       letter-spacing: 0.93px;
       text-align: center;
@@ -99,8 +98,11 @@ const AboutHeader = styled.div`
     }
     p {
       font-family: HelveticaNeue;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
+      margin-top: 2vh;
+      font-weight: 100;
+      letter-spacing: 1.04px;
       width: 100%;
       margin-bottom: 2vh;
     }
@@ -122,7 +124,7 @@ const AboutContent = styled.div`
     width: 304px;
     img {
       width: 137px;
-      height: 128px;
+      /* height: 128px; */
       object-fit: contain;
     }
   }
