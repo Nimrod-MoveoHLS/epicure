@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "title": "Claro",
+        "image": "../images/claro.png",
+        "body": "lalala",
+        "price":"$12"
+    },
+    {
+        "id":2,
+        "title": "Bla blaaaaaaa",
+        "image": "../images/rectangle.png",
+        "body": "laladfdfdfdfdfla",
+        "price":"$232323"
+    }
+
+]

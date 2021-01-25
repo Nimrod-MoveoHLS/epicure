@@ -1,8 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import HeroHeader from "../../components/HeroHeader/HeroHeader";
-import PopularRestaurants from "../../components/Cards/restaurantCard";
-import SignatureDish from "../../components/Cards/dishCard";
+import PopularRestaurants from "../../components/PopularRest/PopularRest"
+import SignatureDish from "../../components/SignatureDish/SignatureDish"
+// import RestaurantsList from "../../pages/Restaurants/restaurantsList"
 import IconMeaning from "../../components/IconsMeaning/iconMeaning";
 import About from "../../components/About/About";
 import WeeklyChef from "../../components/WeeklyChef/WeeklyChef";
@@ -12,15 +13,11 @@ const Home = () => {
   return (
     <HomeContainer>
       <HeroHeader />
-
       <PopularHeader>
         <h1>THE POPULAR RESTAURANTS IN EPICURE</h1>
       </PopularHeader>
-      <PopularRest>
-        <PopularRestaurants />
-        <PopularRestaurants />
-        <PopularRestaurants />
-      </PopularRest>
+      <PopularRestaurants/>
+      <SignatureDish/>
       <RestLink>
         <a href="/">All Restaurants</a>
       </RestLink>
@@ -65,13 +62,12 @@ h1{
 
   }
 `;
-const PopularRest = styled.div`
+const PopularRestContainer = styled.div`
   display: flex;
   margin: 0 auto;
   @media only screen and (max-width: 550px) {
     display: flex;
     margin: 0;
-
     overflow-x: auto;
   }
 `;

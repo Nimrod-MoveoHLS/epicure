@@ -124,7 +124,7 @@ const AboutContent = styled.div`
     width: 304px;
     img {
       width: 137px;
-      /* height: 128px; */
+      height: 128px;
       object-fit: contain;
     }
   }

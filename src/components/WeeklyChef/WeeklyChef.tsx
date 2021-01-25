@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import PopularRestaurants from "../../components/Cards/restaurantCard";
+import PopularRestaurants from "../Cards/Card";
 
 
 const WeeklyChef = () => {
