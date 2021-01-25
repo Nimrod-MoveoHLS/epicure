@@ -26,6 +26,9 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <CardContainer>
+      {restaraunt && <CardHeader>
+        <h1>{restaraunt}</h1>
+        </CardHeader>}
       {isDish && (
         <DishImage>
           <img src={img} alt={alt}></img>
@@ -37,7 +40,7 @@ const Card: React.FC<CardProps> = ({
           <img src={img} alt={alt}></img>
         </RestImage>
       )}
-      <CardContent>
+      <CardContent price={price}>
         <h2>{title}</h2>
         <p>{body}</p>
         {icon && (
@@ -68,6 +71,17 @@ const CardContainer = styled.section`
   }
 `;
 
+const CardHeader = styled.h1`
+font-size:1.5rem;
+text-align: center;
+font-family: HelveticaNeue;
+margin-top:3vh;
+margin-bottom:2vh;
+
+@media only screen and(max-width:550px) {
+  font-size: 0.8rem;
+}
+`
 const RestImage = styled.div`
   img {
     width: 360px;
@@ -97,14 +111,14 @@ const DishImage = styled.div`
   }
 `;
 
-const CardContent = styled.div`
+const CardContent = styled.div<{readonly price?:number}>`
   background-color: #f9f4ea;
   text-align: center;
   font-family: HelveticaNeue;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  min-height: 250px;
+  height:${p => p.price ? '250px' : '100px'};
 
   h2 {
     margin-top: 0;
@@ -125,7 +139,6 @@ const CardContent = styled.div`
   }
 
   @media only screen and (max-width: 550px) {
-    height: 250px;
 
     h2 {
       font-size: 1.8rem;
