@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 
-
-
 export interface CardProps {
   title: string;
   img: string;
@@ -27,7 +25,7 @@ const Card: React.FC<CardProps> = ({
   isRest,
 }) => {
   return (
-    <RestarauntContainer>
+    <CardContainer>
       {isDish && (
         <DishImage>
           <img src={img} alt={alt}></img>
@@ -39,7 +37,7 @@ const Card: React.FC<CardProps> = ({
           <img src={img} alt={alt}></img>
         </RestImage>
       )}
-      <RestContent>
+      <CardContent>
         <h2>{title}</h2>
         <p>{body}</p>
         {icon && (
@@ -47,17 +45,19 @@ const Card: React.FC<CardProps> = ({
             <img src={icon}></img>
           </Icon>
         )}
-        {/* {price && <Price><hr></hr></Price>} */}
-        {price && <Price>₪ {price}</Price>}
-      </RestContent>
-    </RestarauntContainer>
+        {price && (
+          <Price price={price}>
+            <hr></hr>
+          </Price>
+        )}
+      </CardContent>
+    </CardContainer>
   );
 };
 
 export default Card;
 
-
-const RestarauntContainer = styled.section`
+const CardContainer = styled.section`
   width: 360px;
   overflow: hidden;
   margin: 1vh;
@@ -97,7 +97,7 @@ const DishImage = styled.div`
   }
 `;
 
-const RestContent = styled.div`
+const CardContent = styled.div`
   background-color: #f9f4ea;
   text-align: center;
   font-family: HelveticaNeue;
@@ -147,9 +147,8 @@ const Icon = styled.div`
   }
 `;
 
-const Price = styled.div`
-
-hr {
+const Price = styled.div<{ price: number }>`
+  hr {
     border: none;
     margin: 0 auto;
     width: 50%;
@@ -158,20 +157,19 @@ hr {
     text-align: center;
     height: 5px;
     margin-bottom: 2vh;
+  }
 
-}
-
-hr:after {
-  background-color: #f9f4ea;
-    content: '5';
+  hr:after {
+    background-color: #f9f4ea;
+    content: "₪${(p) => p.price}";
+    font-size: 1.2rem;
     padding: 0 4px;
     position: relative;
     top: -13px;
-}
-   width: 100%;
-  font-size: 24.9px;
+  }
+  /* width: 100%;
   font-weight: 100;
   @media only screen and (max-width: 550px) {
     font-size: 16px;
-  } 
+  } */
 `;
