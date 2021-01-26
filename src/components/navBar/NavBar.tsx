@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import styled from "styled-components";
 import {
   Wrapper,
@@ -38,15 +39,21 @@ const NavBar = () => {
             alt="burger-icon"
           ></img>
         </BurgerIcon>
+        <Link to='/'>
         <LogoIcon>
           <img src="../images/logo.png" alt="logo-icon"></img>
         </LogoIcon>
+          </Link>
         <Logo>EPICURE</Logo>
         <MenuLinks>
-          <a href="/">Restaurants</a>
+          <Link to='/restaurants'>
+          Restaurants
+          </Link>
         </MenuLinks>
         <MenuLinks>
-          <a href="/">Chefs</a>
+          <Link to='/chefs'>
+          Chefs
+          </Link>
         </MenuLinks>
       </LeftNav>
       <RightNav>

@@ -11,6 +11,7 @@ export interface CardProps {
   restaraunt?: string;
   isDish?: string;
   isRest?: string;
+  cardData? : any
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,7 +24,10 @@ const Card: React.FC<CardProps> = ({
   restaraunt,
   isDish,
   isRest,
+  cardData
 }) => {
+// console.log(cardData)
+
   return (
     <CardContainer>
       {restaraunt && <CardHeader>
@@ -71,15 +75,21 @@ const CardContainer = styled.section`
   }
 `;
 
-const CardHeader = styled.h1`
-font-size:1.5rem;
-text-align: center;
-font-family: HelveticaNeue;
-margin-top:3vh;
-margin-bottom:2vh;
+const CardHeader = styled.div`
+h1{
+
+
+  font-size:1.5rem;
+  text-align: center;
+  font-family: HelveticaNeue;
+  margin-top:3vh;
+  margin-bottom:2vh;
+}
 
 @media only screen and(max-width:550px) {
-  font-size: 0.8rem;
+  h1{
+    font-size: 0.8rem;
+  }
 }
 `
 const RestImage = styled.div`

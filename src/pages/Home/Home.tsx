@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 import HeroHeader from "../../components/HeroHeader/HeroHeader";
 import PopularRestaurants from "../../components/PopularRest/PopularRest"
 import SignatureDish from "../../components/SignatureDish/SignatureDish"
-// import RestaurantsList from "../../pages/Restaurants/restaurantsList"
 import IconMeaning from "../../components/IconsMeaning/iconMeaning";
 import About from "../../components/About/About";
 import WeeklyChef from "../../components/WeeklyChef/WeeklyChef";
@@ -19,7 +19,9 @@ const Home = () => {
       <PopularRestaurants/>
       <SignatureDish/>
       <RestLink>
-        <a href="/">All Restaurants</a>
+      <Link to='/restaurants'>
+      All Restaurants
+          </Link>
       </RestLink>
         <IconMeaning />
       <WeeklyChef />

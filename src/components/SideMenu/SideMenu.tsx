@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface AppProps {
   setIsShown(): void;
@@ -20,24 +21,29 @@ const Burger: React.FC<AppProps> = (props) => {
       </ClosingMenu>
       <ul>
         <li>
-          {" "}
-          <a href="/">Restaurants</a>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+            Restaurants
+          </Link>
         </li>
         <li>
-          {" "}
-          <a href="/">Chefs</a>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+            Chefs
+          </Link>
         </li>
         <li>
-          {" "}
-          <a href="/">Contact Us</a>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+            Contact Us
+          </Link>
         </li>
         <li>
-          {" "}
-          <a href="/">Term Of Use</a>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+            Term Of Use
+          </Link>
         </li>
         <li>
-          {" "}
-          <a href="/">Privacy Policy</a>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+            Privacy Policy
+          </Link>
         </li>
       </ul>
     </MenuContainer>
@@ -72,7 +78,9 @@ const MenuContainer = styled.div<{ isShown: boolean }>`
     }
     li {
       margin: 15vw;
+      cursor: pointer;
     }
+
     a:link {
       text-decoration: none;
       color: black;
