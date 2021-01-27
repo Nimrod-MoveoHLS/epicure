@@ -18,7 +18,7 @@ const RestaurantsList = () => {
       alt: "claro-img",
       dishes: [
         {
-          id: 1,
+          dish_id: 1,
           title: "Pad Ki Mao",
           image: "../images/padkimao.png",
           body:
@@ -188,20 +188,22 @@ const RestarauntContainer = styled.section`
   @media screen and (max-width: 550px) {
     display: flex;
     flex-direction: column;
-  }
+    padding-left: 0;
+  padding-right: 0;
+align-items:center  }
 `;
 
 const Cardscontainer = styled.section`
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 1em;
+    /* padding: 1em; */
     grid-row-gap: 30px;
   
     @media only screen and (max-width: 550px) {
 
-        grid-template-columns: 1fr;
-    grid-row-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1px;
 }
 
 `;
@@ -209,6 +211,7 @@ const FilterContainer = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin-bottom:3vh;
   margin-top:5vh;
   button {
@@ -234,6 +237,13 @@ const FilterContainer = styled.section`
 
   @media only screen and (max-width:550px) {
 justify-content: space-evenly;
+/* width: 80%; */
+button {
+    height: 21px;
+  margin: 0;
+  font-family: HelveticaNeue;
+  font-size: 1rem;
+}
   }
 
 `;

@@ -11,6 +11,7 @@ export interface CardProps {
   restaraunt?: string;
   isDish?: string;
   isRest?: string;
+  isPopular?:boolean
   cardData? : any
 }
 
@@ -24,27 +25,32 @@ const Card: React.FC<CardProps> = ({
   restaraunt,
   isDish,
   isRest,
-  cardData
+  isPopular
 }) => {
 // console.log(cardData)
 
   return (
-    <CardContainer>
+    <CardContainer isRest={isRest}>
       {restaraunt && <CardHeader>
         <h1>{restaraunt}</h1>
         </CardHeader>}
+      {isRest && (
+        <RestImage>
+          <img src={img} alt={alt}></img>
+        </RestImage>
+      )}
       {isDish && (
         <DishImage>
           <img src={img} alt={alt}></img>
         </DishImage>
       )}
 
-      {isRest && (
-        <RestImage>
+      {isPopular && (
+        <PopularRestImage>
           <img src={img} alt={alt}></img>
-        </RestImage>
+        </PopularRestImage>
       )}
-      <CardContent price={price}>
+      <CardContent price={price} isRest={isRest}> 
         <h2>{title}</h2>
         <p>{body}</p>
         {icon && (
@@ -64,13 +70,13 @@ const Card: React.FC<CardProps> = ({
 
 export default Card;
 
-const CardContainer = styled.section`
+const CardContainer = styled.div<{readonly isRest?:string}>`
   width: 360px;
   overflow: hidden;
   margin: 1vh;
 
   @media only screen and (max-width: 550px) {
-    width: 259.2px;
+    width:${p => p.isRest ? '160px' : '260px'};
     overflow: visible;
   }
 `;
@@ -82,6 +88,7 @@ h1{
   font-size:1.5rem;
   text-align: center;
   font-family: HelveticaNeue;
+  font-weight: 100;
   margin-top:3vh;
   margin-bottom:2vh;
 }
@@ -92,7 +99,7 @@ h1{
   }
 }
 `
-const RestImage = styled.div`
+const PopularRestImage = styled.div`
   img {
     width: 360px;
     height: 224px;
@@ -102,6 +109,22 @@ const RestImage = styled.div`
     img {
       width: 206px;
       height: 224px;
+      object-fit: cover;
+    }
+  }
+`;
+const RestImage = styled.div`
+  img {
+    width: 360px;
+  height: 212.2px;
+  object-fit: cover;
+
+  }
+
+  @media only screen and (max-width: 550px) {
+    img {
+      width: 162px;
+  height: 124px;
       object-fit: cover;
     }
   }
@@ -121,7 +144,7 @@ const DishImage = styled.div`
   }
 `;
 
-const CardContent = styled.div<{readonly price?:number}>`
+const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
   background-color: #f9f4ea;
   text-align: center;
   font-family: HelveticaNeue;
@@ -129,9 +152,11 @@ const CardContent = styled.div<{readonly price?:number}>`
   justify-content: space-between;
   flex-direction: column;
   height:${p => p.price ? '250px' : '100px'};
+  width:${p => p.isRest ? '360px' : 'auto'};
 
   h2 {
-    margin-top: 0;
+    font-family: HelveticaNeue;
+  font-weight: 100;
     margin-bottom: 2vh;
     padding-top: 20px;
     font-size: 2rem;
@@ -140,6 +165,7 @@ const CardContent = styled.div<{readonly price?:number}>`
 
   p {
     font-size: 1.563;
+    font-weight: 100;
     letter-spacing: 1.67px;
     padding-bottom: 20px;
     width: 80%;
@@ -149,14 +175,15 @@ const CardContent = styled.div<{readonly price?:number}>`
   }
 
   @media only screen and (max-width: 550px) {
+    width:${p => p.isRest ? '160px' : 'auto'};
 
     h2 {
-      font-size: 1.8rem;
+      font-size:${p => p.isRest ? '1.3rem' : '1.8rem'};
     }
 
     p {
-      font-size: 1rem;
-    }
+      font-size:${p => p.isRest ? '0.9rem' : '1rem'};
+1    }
   }
 `;
 
@@ -173,6 +200,8 @@ const Icon = styled.div`
 const Price = styled.div<{ price: number }>`
   hr {
     border: none;
+    font-weight: 100;
+    font-family: HelveticaNeue;
     margin: 0 auto;
     width: 50%;
     border-top: 1px solid black;

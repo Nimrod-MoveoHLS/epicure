@@ -18,7 +18,7 @@ const PopularRest = () => {
     const list = [
         {
             "id":1,
-            "type" : "restaraunt",
+            "isPopular" : true,
             "title": "Claro",
             "image": "../images/claro.png",
             "body": "Ran Shmueli",
@@ -26,14 +26,14 @@ const PopularRest = () => {
         },
         {
             "id":2,
-            "type" : "restaraunt",
+            "isPopular" : true,
             "title": "Lumina",
             "image": "../images/mizlala-gret-mullet-fillet.png",
             "body": "Meir Adoni",
         },
         {
             "id":3,
-            "type" : "restaraunt",
+            "isPopular" : true,
             "title": "Tiger Lilly",
             "image": "../images/tiger-lili.png",
             "body": "Yanir Green",
@@ -46,7 +46,7 @@ const PopularRest = () => {
         <PopularRestContainer>
         {list.map(card => {
              return (
-                 <Card key={card.id} title={card.title} body={card.body} img={card.image} alt={card.alt} isRest={card.type}/>
+                 <Card key={card.id} title={card.title} body={card.body} img={card.image} alt={card.alt} isPopular={card.isPopular}/>
              )
          })}
          </PopularRestContainer>
