@@ -1,17 +1,213 @@
 [
     {
-        "id":1,
-        "title": "Claro",
-        "image": "../images/claro.png",
-        "body": "lalala",
-        "price":"$12"
+    "id": 1,
+    "new": true,
+    "popular": true,
+    "open": true,
+    "type": "restaraunt",
+    "title": "Claro",
+    "image": "../images/claro.png",
+    "body": "Ran Shmueli",
+    "alt": "claro-img",
+    "dishes": [
+      {
+        "id": 1,
+        "dish_id": 1,
+        "title": "Pad Ki Mao",
+        "image": "../images/padkimao.png",
+        "body":
+          "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+        "alt": "Pad Ki Mao",
+        "price": 88,
+        "icon": "../images/group-2.svg"
+      },
+      {
+        "id": 1,
+        "dish_id": 2,
+        "title": "Ta Ma-La-Ko",
+        "image": "../images/padkimao.png",
+        "body":
+          "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+        "alt": "Ta Ma-La-Ko",
+        "price": 98,
+        "icon": "../images/group-2.svg"
+      },
+      {
+        "id": 1,
+        "dish_id": 3,
+        "title": "Red Farm",
+        "image": "../images/padkimao.png",
+        "body":
+          "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+        "alt": "Red Farm",
+        "price": 98,
+        "icon": "../images/group-2.svg"
+      },
+      {
+        "id": 1,
+        "dish_id": 4,
+        "title": "Red Farm",
+        "image": "../images/padkimao.png",
+        "body":
+          "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+        "alt": "Red Farm",
+        "price": 98,
+        "icon": "../images/group-2.svg"
+      },
+      {
+      "id": 1,
+      "dish_id": 5,
+      "title": "Pad Ki Mao",
+      "image": "../images/padkimao.png",
+      "body":
+        "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+      "alt": "Pad Ki Mao",
+      "price": 88,
+      "icon": "../images/group-2.svg"
     },
     {
-        "id":2,
-        "title": "Bla blaaaaaaa",
-        "image": "../images/rectangle.png",
-        "body": "laladfdfdfdfdfla",
-        "price":"$232323"
-    }
-
+      "id": 1,
+      "dish_id": 6,
+      "title": "Ta Ma-La-Ko",
+      "image": "../images/padkimao.png",
+      "body":
+        "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+      "alt": "Ta Ma-La-Ko",
+      "price": 98,
+      "icon": "../images/group-2.svg"
+    },
+    {
+      "id": 1,
+      "dish_id": 7,
+      "title": "Pad Ki Mao",
+      "image": "../images/padkimao.png",
+      "body":
+        "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+      "alt": "Pad Ki Mao",
+      "price": 88,
+      "icon": "../images/group-2.svg"
+    },
+    {
+      "id": 1,
+      "dish_id": 8,
+      "title": "Red Farm",
+      "image": "../images/padkimao.png",
+      "body":
+        "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+      "alt": "Red Farm",
+      "price": 98,
+      "icon": "../images/group-2.svg"
+    },
+    {
+    "id": 1,
+    "dish_id": 9,
+    "title": "Pad Ki Mao",
+    "image": "../images/padkimao.png",
+    "body":
+      "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+    "alt": "Pad Ki Mao",
+    "price": 88,
+    "icon": "../images/group-2.svg"
+  },
+  {
+    "id": 1,
+    "dish_id": 10,
+    "title": "Ta Ma-La-Ko",
+    "image": "../images/padkimao.png",
+    "body":
+      "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+    "alt": "Ta Ma-La-Ko",
+    "price": 98,
+    "icon": "../images/group-2.svg"
+  },
+  {
+    "id": 1,
+    "dish_id": 11,
+    "title": "Red Farm",
+    "image": "../images/padkimao.png",
+    "body":
+      "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+    "alt": "Red Farm",
+    "price": 98,
+    "icon": "../images/group-2.svg"
+  },
+  {
+    "id": 1,
+    "dish_id": 12,
+    "title": "Pad Ki Mao",
+    "image": "../images/padkimao.png",
+    "body":
+      "Tofu, Spekkoek Peanuts, Spicy Manis, Pear Yakitori",
+    "alt": "Pad Ki Mao",
+    "price": 98,
+    "icon": "../images/group-2.svg"
+  }
+    ]
+  },
+  {
+    "id": 2,
+    "new": true,
+    "popular": false,
+    "open": true,
+    "type": "restaraunt",
+    "title": "Kab Kem",
+    "image": "../images/kab-kem.png",
+    "body": "Yariv Malili",
+    "alt": "Kab Kem"
+  },
+  {
+    "id": 3,
+    "new": false,
+    "popular": false,
+    "open": false,
+    "type": "restaraunt",
+    "title": "Messa",
+    "image": "../images/messa.png",
+    "body": "Aviv Moshe",
+    "alt": "Messa"
+  },
+  {
+    "id": 4,
+    "new": true,
+    "popular": false,
+    "open": false,
+    "type": "restaraunt",
+    "title": "Nithan Thai",
+    "image": "../images/nithan-thai.png",
+    "body": "Shahaf Shabtay",
+    "alt": "Nithan Thai"
+  },
+  {
+    "id": 5,
+    "new": false,
+    "popular": false,
+    "open": true,
+    "type": "restaraunt",
+    "title": "Tiger Lilly",
+    "image": "../images/tiger-lilly.png",
+    "body": "Yanir Green",
+    "alt": "Tiger Lilly"
+  },
+  {
+    "id": 6,
+    "new": true,
+    "popular": true,
+    "open": true,
+    "type": "restaraunt",
+    "title": "Ya Pan",
+    "image": "../images/japanese.png",
+    "body": "Yuval Ben Neriah",
+    "alt": "Ya Pan"
+  },
+  {
+    "id": 7,
+    "new": true,
+    "popular": false,
+    "open": false,
+    "type": "restaraunt",
+    "title": "Lumina",
+    "image": "../images/lumina.png",
+    "body": "Meir Adoni",
+    "alt": "Lumina"
+  }
 ]

@@ -64,15 +64,15 @@ h1{
 
   }
 `;
-const PopularRestContainer = styled.div`
-  display: flex;
-  margin: 0 auto;
-  @media only screen and (max-width: 550px) {
-    display: flex;
-    margin: 0;
-    overflow-x: auto;
-  }
-`;
+// const PopularRestContainer = styled.div`
+//   display: flex;
+//   margin: 0 auto;
+//   @media only screen and (max-width: 550px) {
+//     display: flex;
+//     margin: 0;
+//     overflow-x: auto;
+//   }
+// `;
 const RestLink = styled.div`
 margin-top: 2vh;
 margin-left: 70%;

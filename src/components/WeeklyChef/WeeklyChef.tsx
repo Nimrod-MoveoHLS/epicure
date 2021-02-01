@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import PopularRestaurants from "../Cards/Card";
 
 
 const WeeklyChef = () => {
@@ -23,8 +22,7 @@ const WeeklyChef = () => {
           expressed in the every detail of each and every dish.
         </p>
       </WeeklyContent>
-      {/* <WeeklyChefRest>
-      </WeeklyChefRest> */}
+
     </WeeklyContainer>
   );
 };
@@ -118,8 +116,3 @@ const WeeklyContent = styled.section`
   }
   }
 `;
-
-
-const WeeklyChefRest = styled.div`
-
-`

@@ -85,7 +85,7 @@ export const MenuLinks = styled.div`
 }
            a:hover {
          text-decoration: none;
-         color: purple;
+         color: darkgreen;
 }
 
   @media (max-width: 650px) {

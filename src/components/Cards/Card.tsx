@@ -11,6 +11,7 @@ export interface CardProps {
   restaraunt?: string;
   isDish?: string;
   isRest?: string;
+  isSignatureDish?:string
   isPopular?:boolean
   cardData? : any
 }
@@ -25,9 +26,9 @@ const Card: React.FC<CardProps> = ({
   restaraunt,
   isDish,
   isRest,
-  isPopular
+  isPopular,
+  isSignatureDish
 }) => {
-// console.log(cardData)
 
   return (
     <CardContainer isRest={isRest}>
@@ -39,10 +40,10 @@ const Card: React.FC<CardProps> = ({
           <img src={img} alt={alt}></img>
         </RestImage>
       )}
-      {isDish && (
-        <DishImage>
+      {isSignatureDish && (
+        <SignatureDish>
           <img src={img} alt={alt}></img>
-        </DishImage>
+        </SignatureDish>
       )}
 
       {isPopular && (
@@ -55,7 +56,8 @@ const Card: React.FC<CardProps> = ({
         <p>{body}</p>
         {icon && (
           <Icon>
-            <img src={icon}></img>
+            <img src={icon} alt={alt}></img>
+            
           </Icon>
         )}
         {price && (
@@ -113,6 +115,7 @@ const PopularRestImage = styled.div`
     }
   }
 `;
+
 const RestImage = styled.div`
   img {
     width: 360px;
@@ -129,7 +132,7 @@ const RestImage = styled.div`
     }
   }
 `;
-const DishImage = styled.div`
+const SignatureDish = styled.div`
   img {
     width: 360px;
     height: 290px;
@@ -139,6 +142,20 @@ const DishImage = styled.div`
     img {
       width: 259.2px;
       height: 208.8px;
+      object-fit: cover;
+    }
+  }
+`;
+const DishImage = styled.div`
+  img {
+    width: 235.5px;
+  height: 150px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    img {
+      width: 157px;
+  height: 100px;
       object-fit: cover;
     }
   }
@@ -183,7 +200,7 @@ const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
 
     p {
       font-size:${p => p.isRest ? '0.9rem' : '1rem'};
-1    }
+    }
   }
 `;
 
