@@ -7,6 +7,7 @@ import firebase from "firebase";
 
 const RestaurantsList = () => {
   const [restaurants, setRestaurants] = useState<any[]>([]);
+  const [filteredRest, setfilteredRest] = useState<any[]>([]);
 
   useEffect(() => {
     fetchData();
@@ -21,22 +22,22 @@ const RestaurantsList = () => {
       dataArray.push({ ...doc.data(), id: doc.id });
     }
     setRestaurants(dataArray);
+    setfilteredRest(dataArray)
     console.log(restaurants);
   };
 
   const filterHandler = (e: any) => {
     if (e.target.value === "all") {
-      // fetchData()
-      setRestaurants(restaurants.filter((card) => card));
+      setfilteredRest(restaurants.filter((card) => card));
     }
     if (e.target.value === "new") {
-      setRestaurants(restaurants.filter((card) => card.new));
+      setfilteredRest(restaurants.filter((card) => card.new));
     }
     if (e.target.value === "open") {
-      setRestaurants(restaurants.filter((card) => card.open));
+      setfilteredRest(restaurants.filter((card) => card.open));
     }
     if (e.target.value === "popular") {
-      setRestaurants(restaurants.filter((card) => card.popular));
+      setfilteredRest(restaurants.filter((card) => card.popular));
     }
   };
 
@@ -57,10 +58,12 @@ const RestaurantsList = () => {
         </button>
       </FilterContainer>
       <Cardscontainer>
-        {restaurants.map((card: any) => {
+        {filteredRest.map((card: any) => {
           return (
             <Link key={card.id} to={`/restaurants/${card.id}`}>
               <Card
+              key={card.id}
+              id={card.id}
                 title={card.title}
                 body={card.body}
                 img={card.image}

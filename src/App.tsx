@@ -14,21 +14,9 @@ import Dishes from "./pages/Dishes/DishList";
 import Footer from "./components/Footer/footer";
 
 function App() {
-  const [restaurants, setRestaurants] = useState([]);
-
+  
   useEffect(() => {
-    const fetchData = async () => {
       const db = firebase.firestore();
-      let restaurantsRef = db.collection('restaurants');
-      let allRestaurants = await restaurantsRef.get()
-      let dataArray:any = []
-      for (const doc of allRestaurants.docs){
-        dataArray.push({...doc.data(), id: doc.id})
-      }
-      setRestaurants(dataArray)
-    };
-    
-    fetchData();
   },[]);
 
   return (
@@ -37,7 +25,7 @@ function App() {
       <div className="App">
         <NavBar />
         <Route path="/" exact component={Home} />
-        <Route path="/restaurants" exact component={Restaurants} restaurants={restaurants} />
+        <Route path="/restaurants" exact component={Restaurants}/>
         <Route path="/restaurants/:id" component={Dishes}/>
         <Footer />
       </div>

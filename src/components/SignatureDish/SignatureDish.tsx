@@ -54,6 +54,7 @@ const SignatureDish = () => {
 
     return (
         <SignatureDishContainer>
+            
         {list.map(card => {
              return (
                  <Card key={card.id} title={card.title} body={card.body} img={card.image} alt={card.alt} restaraunt={card.restaraunt} price={card.price} icon={card.icon} isSignatureDish={card.type}/>
