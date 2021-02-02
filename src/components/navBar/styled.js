@@ -85,8 +85,14 @@ export const MenuLinks = styled.div`
 }
            a:hover {
          text-decoration: none;
-         color: darkgreen;
+         color: black;
 }
+a:active {
+  padding-bottom: 10px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
+  a:focus {
+    padding-bottom: 10px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
 
   @media (max-width: 650px) {
     display: none;

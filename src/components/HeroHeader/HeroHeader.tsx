@@ -32,6 +32,8 @@ const HeroContainer = styled.section`
   background-size: cover;
   height: 100vh;
   width: 100%;
+  margin-bottom: 7vh;
+
 
   @media only screen and (max-width: 550px) {
     height: 269px;
@@ -98,7 +100,7 @@ const SearchContainer = styled.div`
     width: 511px;
     height: 48px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: transparent;
     object-fit: contain;
     border-radius: 4px;
     font-family: HelveticaNeue;

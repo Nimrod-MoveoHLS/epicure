@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 export interface CardProps {
+  id?:number;
   title: string;
   img: string;
   alt?: string;
@@ -14,9 +15,12 @@ export interface CardProps {
   isSignatureDish?:string
   isPopular?:boolean
   cardData? : any
+  onClickId?:any
+  onClickModal?:any
 }
 
 const Card: React.FC<CardProps> = ({
+  id,
   title,
   img,
   body,
@@ -27,11 +31,22 @@ const Card: React.FC<CardProps> = ({
   isDish,
   isRest,
   isPopular,
-  isSignatureDish
+  isSignatureDish,
+  onClickId,
+  onClickModal
 }) => {
 
+
+  const handleClicks = (id:any) => {
+    onClickId(id);
+  onClickModal();
+  }
+
+  
   return (
-    <CardContainer isRest={isRest}>
+    <>
+  
+    <CardContainer className="card-container" isRest={isRest}>
       {restaraunt && <CardHeader>
         <h1>{restaraunt}</h1>
         </CardHeader>}
@@ -40,33 +55,37 @@ const Card: React.FC<CardProps> = ({
           <img src={img} alt={alt}></img>
         </RestImage>
       )}
+      {isDish && (
+        <DishImage className="dish-image" onClick={() => handleClicks(id)}>
+          <img src={img} alt={alt}></img>
+        </DishImage>
+      )}
       {isSignatureDish && (
-        <SignatureDish>
+        <SignatureDish >
           <img src={img} alt={alt}></img>
         </SignatureDish>
       )}
-
       {isPopular && (
         <PopularRestImage>
           <img src={img} alt={alt}></img>
         </PopularRestImage>
       )}
-      <CardContent price={price} isRest={isRest}> 
+      <CardContent className="card-content" price={price} isRest={isRest}> 
         <h2>{title}</h2>
         <p>{body}</p>
         {icon && (
-          <Icon>
+          <Icon className="icon">
             <img src={icon} alt={alt}></img>
-            
           </Icon>
         )}
         {price && (
-          <Price price={price}>
+          <Price price={price} className="card-price">
             <hr></hr>
           </Price>
         )}
       </CardContent>
     </CardContainer>
+    </>
   );
 };
 
@@ -85,8 +104,6 @@ const CardContainer = styled.div<{readonly isRest?:string}>`
 
 const CardHeader = styled.div`
 h1{
-
-
   font-size:1.5rem;
   text-align: center;
   font-family: HelveticaNeue;
@@ -132,6 +149,22 @@ const RestImage = styled.div`
     }
   }
 `;
+const DishImage = styled.div`
+  img {
+    width: 360px;
+  height: 212.2px;
+  object-fit: cover;
+
+  }
+
+  @media only screen and (max-width: 550px) {
+    img {
+      width: 157px;
+  height: 100px;
+      object-fit: cover;
+    }
+  }
+`;
 const SignatureDish = styled.div`
   img {
     width: 360px;
@@ -146,22 +179,51 @@ const SignatureDish = styled.div`
     }
   }
 `;
-const DishImage = styled.div`
-  img {
-    width: 235.5px;
-  height: 150px;
+
+
+const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
+  background-color: #f7e0b2;
+  text-align: center;
+  font-family: HelveticaNeue;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height:${p => p.price ? '250px' : '100px'};
+  width:${p => p.isRest ? '360px' : 'auto'};
+
+  h2 {
+    font-family: HelveticaNeue;
+  font-weight: 100;
+    margin-bottom: 2vh;
+    padding-top: 20px;
+    font-size: 2rem;
+    letter-spacing: 2.67px;
+  }
+
+  p {
+    font-size: 1.563;
+    font-weight: 100;
+    letter-spacing: 1.67px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin-top: 2vh;
+    margin: 0 auto;
+    font-size: 1.3rem;
   }
 
   @media only screen and (max-width: 550px) {
-    img {
-      width: 157px;
-  height: 100px;
-      object-fit: cover;
+    width:${p => p.isRest ? '160px' : 'auto'};
+
+    h2 {
+      font-size:${p => p.isRest ? '1.3rem' : '1.8rem'};
+    }
+
+    p {
+      font-size:${p => p.isRest ? '0.9rem' : '1rem'};
     }
   }
 `;
-
-const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
+const CardContentDish = styled.div<{readonly price?:number; isRest?:string}>`
   background-color: #f9f4ea;
   text-align: center;
   font-family: HelveticaNeue;
@@ -229,7 +291,7 @@ const Price = styled.div<{ price: number }>`
   }
 
   hr:after {
-    background-color: #f9f4ea;
+    background-color: #f7e0b2;
     content: "₪${(p) => p.price}";
     font-size: 1.2rem;
     padding: 0 4px;
