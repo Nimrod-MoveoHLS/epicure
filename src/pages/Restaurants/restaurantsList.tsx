@@ -114,7 +114,14 @@ const Cardscontainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 30px;
-
+  .card-content {
+  background-color: #f9f4ea;
+}
+.card-price {
+  hr :after {
+    background-color: black;
+  }
+} 
   @media only screen and (max-width: 550px) {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1px;

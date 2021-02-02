@@ -15,6 +15,7 @@ const FooterContainer = styled.footer`
     list-style: none;
     text-align: center;
     font-family: HelveticaNeue;
+    font-weight: 100;
     font-size: 1.2rem;
     padding: 0;
   }

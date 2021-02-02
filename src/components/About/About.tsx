@@ -79,12 +79,17 @@ const AboutHeader = styled.div`
   h1 {
     font-family: HelveticaNeue;
     font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 2vh;
+
   }
   p {
     font-family: HelveticaNeue;
-    font-size: 1rem;
+    font-size: 22px;
     text-align: left;
     width: 80%;
+    font-weight: 100;
+
   }
 
   @media only screen and (max-width: 550px) {

@@ -17,12 +17,16 @@ const Home = () => {
         <h1>THE POPULAR RESTAURANTS IN EPICURE</h1>
       </PopularHeader>
       <PopularRestaurants/>
-      <SignatureDish/>
       <RestLink>
       <Link to='/restaurants'>
       All Restaurants
           </Link>
       </RestLink>
+      <PopularHeader>
+        <h1>SIGNATURE DISH OF :</h1>
+      </PopularHeader>
+      <SignatureDish/>
+
         <IconMeaning />
       <WeeklyChef />
       <About />
@@ -40,8 +44,9 @@ const HomeContainer = styled.section`
 `;
 const PopularHeader = styled.div`
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 5vh;
   h1{
+    margin-bottom:2vh;
     font-family: HelveticaNeue;
   font-size: 2rem;
   font-weight: 100;

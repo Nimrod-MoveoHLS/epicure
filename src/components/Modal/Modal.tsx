@@ -110,20 +110,17 @@ const Background = styled.div`
 `;
 const ModalContainer = styled.div`
   background-color: white;
-  top: -40vh;
-  /* width: 608px; */
-  height: 1000px;
-  /* margin: 1vh; */
+  top: -30vh;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 10;
 
   @media only screen and (max-width: 550px) {
     width: 100%;
-    top: 10vh;
+    top: 0vh;
     width: 100vw;
-    height: 100%;
-
+    position: absolute;
+  z-index: 100;
   }
 `;
 
@@ -137,7 +134,7 @@ const RestImage = styled.div`
   @media only screen and (max-width: 550px) {
     img {
         width: 100%;
-  height: 254px;
+  height: 100%;
   object-fit: contain;
     }
   }
@@ -174,12 +171,19 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
     width: ${(p) => (p.isRest ? "160px" : "auto")};
 
     h2 {
-      font-size: ${(p) => (p.isRest ? "1.3rem" : "1.8rem")};
+        margin-top: 0;
     }
 
     p {
-      font-size: ${(p) => (p.isRest ? "0.9rem" : "1rem")};
-    }
+
+  font-family: HelveticaNeue;
+  font-size: 16.8px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.12px;
+  text-align: center;
   }
 `;
 

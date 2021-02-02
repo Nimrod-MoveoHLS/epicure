@@ -79,7 +79,7 @@ const Card: React.FC<CardProps> = ({
           </Icon>
         )}
         {price && (
-          <Price price={price}>
+          <Price price={price} className="card-price">
             <hr></hr>
           </Price>
         )}
@@ -182,7 +182,7 @@ const SignatureDish = styled.div`
 
 
 const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
-  background-color: #f9f4ea;
+  background-color: #f7e0b2;
   text-align: center;
   font-family: HelveticaNeue;
   display: flex;
@@ -291,7 +291,7 @@ const Price = styled.div<{ price: number }>`
   }
 
   hr:after {
-    background-color: #f9f4ea;
+    background-color: #f7e0b2;
     content: "₪${(p) => p.price}";
     font-size: 1.2rem;
     padding: 0 4px;

@@ -245,7 +245,13 @@ const SignatureDishContainer = styled.div`
   width: 235.5px;
   height: 150px;
   object-fit: contain
-}  
+} 
+.card-price {
+  hr :after {
+
+    background-color: black;
+  }
+} 
 h2 {
     font-family: HelveticaNeue;
   font-weight: 100;
@@ -274,13 +280,17 @@ h2 {
   object-fit: contain
 } 
     h2 {
-      font-size: 15px;
+      font-size: 1.3rem;
     }
 
     p {
       font-size: 13px;
     }
-  }
+
+    hr:after{
+      background-color: #f9f4ea;
+
+    }  }
 }
 
 .icon {

@@ -32,6 +32,8 @@ const HeroContainer = styled.section`
   background-size: cover;
   height: 100vh;
   width: 100%;
+  margin-bottom: 7vh;
+
 
   @media only screen and (max-width: 550px) {
     height: 269px;
