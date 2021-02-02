@@ -104,7 +104,6 @@ const Background = styled.div`
     top: 0;
     @media only screen and (max-width: 550px) {
     width: 100%;
-    width: 100vw;
     height: 100%;
 
   }

@@ -109,10 +109,10 @@ const RestarauntContainer = styled.section`
   }
 `;
 
+
 const Cardscontainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* padding: 1em; */
   grid-row-gap: 30px;
 
   @media only screen and (max-width: 550px) {

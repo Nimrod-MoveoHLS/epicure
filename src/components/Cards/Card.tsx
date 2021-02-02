@@ -46,7 +46,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
   
-    <CardContainer isRest={isRest}>
+    <CardContainer className="card-container" isRest={isRest}>
       {restaraunt && <CardHeader>
         <h1>{restaraunt}</h1>
         </CardHeader>}
@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
         </RestImage>
       )}
       {isDish && (
-        <DishImage onClick={() => handleClicks(id)}>
+        <DishImage className="dish-image" onClick={() => handleClicks(id)}>
           <img src={img} alt={alt}></img>
         </DishImage>
       )}
@@ -70,11 +70,11 @@ const Card: React.FC<CardProps> = ({
           <img src={img} alt={alt}></img>
         </PopularRestImage>
       )}
-      <CardContent price={price} isRest={isRest}> 
+      <CardContent className="card-content" price={price} isRest={isRest}> 
         <h2>{title}</h2>
         <p>{body}</p>
         {icon && (
-          <Icon>
+          <Icon className="icon">
             <img src={icon} alt={alt}></img>
           </Icon>
         )}
@@ -91,7 +91,7 @@ const Card: React.FC<CardProps> = ({
 
 export default Card;
 
-const CardContainer = styled.div<{readonly isRest?:string ; readonly isDish?:string ; readonly isSignatureDish?:string; readonly isPopular?:boolean }>`
+const CardContainer = styled.div<{readonly isRest?:string}>`
   width: 360px;
   overflow: hidden;
   margin: 1vh;
@@ -159,8 +159,8 @@ const DishImage = styled.div`
 
   @media only screen and (max-width: 550px) {
     img {
-      width: 162px;
-  height: 124px;
+      width: 157px;
+  height: 100px;
       object-fit: cover;
     }
   }
