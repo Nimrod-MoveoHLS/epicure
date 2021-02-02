@@ -10,6 +10,7 @@ import firebase from "firebase";
 
 function DishList({ match }: RouteComponentProps<any>) {
   const [dishes, setDishes] = useState<any[]>([]);
+  const [filteredDishes, setFilteredDishes] = useState<any[]>([]);
   const [header, setHeader] = useState<any>({});
   const [selectedDishId, setselectedDishId] = useState(null);
   const [showModal, setShowModal] = useState<any>(false);
@@ -35,6 +36,7 @@ function DishList({ match }: RouteComponentProps<any>) {
       dataArray.push({ ...doc.data(), id: doc.id });
     }
     setDishes(dataArray);
+    setFilteredDishes(dataArray)
   };
 
   const fetchHeader = async () => {
@@ -54,6 +56,19 @@ function DishList({ match }: RouteComponentProps<any>) {
         console.log("Error getting document:", error);
       });
   };
+console.log(filteredDishes)
+  const filterHandler = (e: any) => {
+    if (e.target.value === "breakfest") {
+      setFilteredDishes(dishes.filter((card) => card.breakfest));
+    }
+    if (e.target.value === "launch") {
+      setFilteredDishes(dishes.filter((card) => card.launch));
+    }
+    if (e.target.value === "dinner") {
+      setFilteredDishes(dishes.filter((card) => card.dinner));
+    }
+  };
+
 
   return (
     <Container>
@@ -74,12 +89,12 @@ function DishList({ match }: RouteComponentProps<any>) {
             </h2>
           </IsOpen>
       <FilterContainer>
-        <button value="breakfest">Breakfest</button>
-        <button value="launch">Launch</button>
-        <button value="dinner">Dinner</button>
+        <button value="breakfest" onClick={(e) => filterHandler(e)} >Breakfest</button>
+        <button value="launch" onClick={(e) => filterHandler(e)}>Launch</button>
+        <button value="dinner" onClick={(e) => filterHandler(e)}>Dinner</button>
       </FilterContainer>
       <SignatureDishContainer>
-        {dishes.map((card) => {
+        {filteredDishes.map((card) => {
           return (
             <Card
             onClickId={setselectedDishId}
@@ -92,8 +107,7 @@ function DishList({ match }: RouteComponentProps<any>) {
               alt={card.alt}
               price={card.price}
               icon={card.icon}
-              isRest={card.type}
-              // isRest={card.type}
+              isDish={card.type}
             />
           );
         })}

@@ -94,21 +94,26 @@ export default Modal;
 
 const Background = styled.div`
     z-index: 999;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vw;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
     top: 0;
-  
+    @media only screen and (max-width: 550px) {
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+
+  }
 `;
 const ModalContainer = styled.div`
   background-color: white;
-  top: 10vh;
+  top: -40vh;
   /* width: 608px; */
-  height: 100%;
+  height: 1000px;
   /* margin: 1vh; */
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -116,7 +121,7 @@ const ModalContainer = styled.div`
 
   @media only screen and (max-width: 550px) {
     width: 100%;
-    /* top: -15vh; */
+    top: 10vh;
     width: 100vw;
     height: 100%;
 

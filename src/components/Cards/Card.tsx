@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
         </RestImage>
       )}
       {isDish && (
-        <DishImage onClick={() => handleClicks(id)} >
+        <DishImage onClick={() => handleClicks(id)}>
           <img src={img} alt={alt}></img>
         </DishImage>
       )}
