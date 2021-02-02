@@ -127,6 +127,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding-left: 0;
+  padding-right: 0;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -225,10 +227,23 @@ const SignatureDishContainer = styled.div`
   .card-container {
     width: 236px;
     height: auto;
+    padding: 15px;
+    img {
+  width: 235.5px;
+  height: 150px;
+  object-fit: contain
+} 
 
+    
   @media only screen and (max-width: 550px) {
   width: 157px;
     overflow: visible;
+    padding: 5px;
+    img {
+      width: 157px;
+  height: 100px;
+  object-fit: contain
+}
   }
   }
 .card-content {
@@ -247,10 +262,9 @@ const SignatureDishContainer = styled.div`
   object-fit: contain
 } 
 .card-price {
-  hr :after {
-
-    background-color: black;
-  }
+  hr:after{
+      background-color: #f9f4ea;
+    } 
 } 
 h2 {
     font-family: HelveticaNeue;
@@ -271,6 +285,7 @@ h2 {
     margin: 0 auto;
     font-size: 1.3rem;
   }
+  
   @media only screen and (max-width: 550px) {
     width: 157px;
     height: 274px;
@@ -328,11 +343,11 @@ const FilterContainer = styled.section`
     outline: none;
   }
   button:active {
-    color: black;
-  }
+  padding-bottom: 10px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
   button:focus {
-    color: black;
-  }
+    padding-bottom: 10px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
 
   @media only screen and (max-width: 550px) {
     justify-content: space-evenly;

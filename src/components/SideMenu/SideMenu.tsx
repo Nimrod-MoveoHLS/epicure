@@ -20,29 +20,38 @@ const Burger: React.FC<AppProps> = (props) => {
         ></img>
       </ClosingMenu>
       <ul>
-        <li>
-          <Link to="/restaurants" onClick={() => setIsShown()}>
-            Restaurants
-          </Link>
-        </li>
-        <li>
+      <li>
           <Link to="/restaurants" onClick={() => setIsShown()}>
             Chefs
           </Link>
         </li>
         <li>
           <Link to="/restaurants" onClick={() => setIsShown()}>
+            <h1 className="li-border">
+            All Restaurants
+            </h1>
+          </Link>
+        </li>
+        <li>
+          <Link to="/restaurants" onClick={() => setIsShown()}>
+          <span >
             Contact Us
+            </span>
           </Link>
         </li>
         <li>
           <Link to="/restaurants" onClick={() => setIsShown()}>
+          <span>
             Term Of Use
+            </span>
           </Link>
         </li>
         <li>
           <Link to="/restaurants" onClick={() => setIsShown()}>
+          <span>
             Privacy Policy
+            </span>
+
           </Link>
         </li>
       </ul>
@@ -73,14 +82,24 @@ const MenuContainer = styled.div<{ isShown: boolean }>`
       list-style: none;
       text-align: center;
       font-family: HelveticaNeue;
-      font-size: 2.25rem;
+      font-size: 2rem;
       padding: 0;
     }
     li {
       margin: 15vw;
       cursor: pointer;
+h1 {
+  font-weight: 100;
+  padding-bottom: 8vh;
+    border-bottom: solid 0.2px black;
+}
+      span {
+      color:gray
+      }
     }
-
+.li-links{
+  color: red;
+}
     a:link {
       text-decoration: none;
       color: black;
@@ -95,7 +114,7 @@ const MenuContainer = styled.div<{ isShown: boolean }>`
 const ClosingMenu = styled.div`
   padding: 30px;
   width: 100%;
-  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.3);
 
   img {
     width: 16px;

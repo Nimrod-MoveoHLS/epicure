@@ -317,11 +317,11 @@ const AddButton = styled.button`
   width: 206px;
   height: 53px;
   margin: 50px 65px 0 65px;
-  padding: 0 0px 0 0;
   border-radius: 2.1px;
   background-color: black;
   margin: 0 auto;
   margin-top: 3vh;
+  margin-bottom: 3vh;
 
   h1 {
     font-family: HelveticaNeue;

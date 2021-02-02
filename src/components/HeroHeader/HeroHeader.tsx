@@ -100,7 +100,7 @@ const SearchContainer = styled.div`
     width: 511px;
     height: 48px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: transparent;
     object-fit: contain;
     border-radius: 4px;
     font-family: HelveticaNeue;
