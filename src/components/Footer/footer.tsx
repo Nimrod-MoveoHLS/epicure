@@ -32,7 +32,7 @@ const FooterContainer = styled.footer`
     color: black;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 650px) {
     height: 126px;
     padding: 1px 0 23px;
     display: flex;

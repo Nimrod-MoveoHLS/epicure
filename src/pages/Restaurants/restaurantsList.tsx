@@ -99,7 +99,7 @@ const RestarauntContainer = styled.section`
     color: black;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
     padding-left: 0;
@@ -121,7 +121,7 @@ const Cardscontainer = styled.section`
     background-color: black;
   }
 } 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1px;
   }
@@ -153,7 +153,7 @@ const FilterContainer = styled.section`
     color: black;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     justify-content: space-evenly;
     /* width: 80%; */
     button {

@@ -56,7 +56,7 @@ function DishList({ match }: RouteComponentProps<any>) {
         console.log("Error getting document:", error);
       });
   };
-  
+
   const filterHandler = (e: any) => {
     if (e.target.value === "breakfest") {
       setFilteredDishes(dishes.filter((card) => card.breakfest));
@@ -143,7 +143,7 @@ const HeaderImage = styled.div<{ readonly mobileImage?: string }>`
     height: 395px;
     object-fit: contain;
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       content: url("${(p) => p.mobileImage}");
       width: 100vw;
@@ -171,7 +171,7 @@ const HeaderContent = styled.div`
     font-weight: 100;
     letter-spacing: 2px;
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     h1 p {
       margin-top: 1vh;
     }
@@ -211,7 +211,7 @@ const DishContainer = styled.section`
     
 
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
     padding-left: 0;
@@ -237,7 +237,7 @@ const SignatureDishContainer = styled.div`
 } 
 
     
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
   width: 157px;
     overflow: visible;
     padding: 5px;
@@ -288,7 +288,7 @@ h2 {
     font-size: 1.3rem;
   }
   
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 157px;
     height: 274px;
     img {
@@ -318,7 +318,7 @@ h2 {
   }
   
 }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1px;
   }
@@ -351,7 +351,7 @@ const FilterContainer = styled.section`
     padding-bottom: 25px;
   border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     justify-content: space-evenly;
     /* width: 80%; */
     button {

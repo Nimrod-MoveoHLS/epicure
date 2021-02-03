@@ -34,7 +34,7 @@ const WeeklyContainer = styled.section`
   flex-direction: column;
   margin-bottom: 5vh;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
     align-items: center;
     margin-top: 10vh;
@@ -54,7 +54,7 @@ const WeeklyHeader = styled.section`
     color: black;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
     align-items: center;
     h1 {
@@ -88,7 +88,7 @@ const WeeklyContent = styled.section`
     object-fit: contain;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
     justify-content: center;

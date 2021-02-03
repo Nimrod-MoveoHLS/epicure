@@ -116,7 +116,7 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
   top: 0;
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
     height: 100%;
   }
@@ -128,7 +128,7 @@ const ModalContainer = styled.div`
   position: relative;
   z-index: 10;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
     top: 0vh;
     width: 100vw;
@@ -144,7 +144,7 @@ const RestImage = styled.div`
     object-fit: contain;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 100%;
       height: 100%;
@@ -180,7 +180,7 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
     font-size: 1.3rem;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: ${(p) => (p.isRest ? "160px" : "auto")};
 
     h2 {

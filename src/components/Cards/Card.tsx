@@ -96,7 +96,7 @@ const CardContainer = styled.div<{readonly isRest?:string}>`
   overflow: hidden;
   margin: 1vh;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width:${p => p.isRest ? '160px' : '260px'};
     overflow: visible;
   }
@@ -112,7 +112,7 @@ h1{
   margin-bottom:2vh;
 }
 
-@media only screen and(max-width:550px) {
+@media only screen and(max-width:650px) {
   h1{
     font-size: 0.8rem;
   }
@@ -124,7 +124,7 @@ const PopularRestImage = styled.div`
     height: 224px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 206px;
       height: 224px;
@@ -141,7 +141,7 @@ const RestImage = styled.div`
 
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 162px;
   height: 124px;
@@ -157,7 +157,7 @@ const DishImage = styled.div`
 cursor: pointer;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 157px;
   height: 100px;
@@ -171,7 +171,7 @@ const SignatureDish = styled.div`
     height: 290px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 259.2px;
       height: 208.8px;
@@ -211,7 +211,7 @@ const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
     font-size: 1.3rem;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width:${p => p.isRest ? '160px' : 'auto'};
 
     h2 {
@@ -253,7 +253,7 @@ const CardContentDish = styled.div<{readonly price?:number; isRest?:string}>`
     font-size: 1.3rem;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width:${p => p.isRest ? '160px' : 'auto'};
 
     h2 {
@@ -300,7 +300,7 @@ const Price = styled.div<{ price: number }>`
   }
   /* width: 100%;
   font-weight: 100;
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     font-size: 16px;
   } */
 `;

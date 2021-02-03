@@ -66,7 +66,7 @@ const MenuContainer = styled.div<{ isShown: boolean }>`
     transition: 0.3 ease-in-out;
     display: none;
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     display: ${(props) => (props.isShown ? "flex" : "none")};
     position: fixed;
     z-index: 999;

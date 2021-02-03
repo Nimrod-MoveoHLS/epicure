@@ -46,7 +46,7 @@ const MeaningContainer = styled.section`
   text-align: center;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     height: 134px;
     padding: 0;
     opacity: 0.9;
@@ -89,7 +89,7 @@ const SpicyIcon = styled.div`
     font-size: 23.4px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 44px;
       height: 34px;
@@ -119,7 +119,7 @@ const VegetarianIcon = styled.div`
     font-size: 23.4px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 33px;
       height: 34px;
@@ -149,7 +149,7 @@ const VeganIcon = styled.div`
     font-size: 23.4px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 37px;
       height: 37px;

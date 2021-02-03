@@ -2,11 +2,25 @@
 import * as React from "react";
 import styled from "styled-components"
 import Card from "../../components/Cards/Card";
+import { Link } from "react-router-dom";
+
 
 const SignatureDishContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  @media only screen and (max-width: 550px) {
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  @media only screen and (max-width: 650px) {
     display: flex;
     margin: 0;
     overflow-x: auto;
@@ -16,7 +30,7 @@ const SignatureDish = () => {
 
     const list = [
         {
-            "id":1,
+            "id":5,
             "type": "dish",
             "restaraunt": "Tiger Lilly",
             "title": "Pad Ki Mao",
@@ -37,9 +51,9 @@ const SignatureDish = () => {
             "price": 98,
         },
         {
-            "id":3,
+            "id":7,
             "type": "dish",
-            "restaraunt": "Popina",
+            "restaraunt": "Lumina",
             "title": "Pad Ki Mao",
             "image": "../images/smokedPizza.png",
             "body": "Basil dough, cashew butter, demi-glace, bison & radish",
@@ -57,7 +71,10 @@ const SignatureDish = () => {
             
         {list.map(card => {
              return (
+                <Link key={card.id} to={`/restaurants/${card.id}`}>
+
                  <Card key={card.id} title={card.title} body={card.body} img={card.image} alt={card.alt} restaraunt={card.restaraunt} price={card.price} icon={card.icon} isSignatureDish={card.type}/>
+                 </Link>
              )
          })}
          </SignatureDishContainer>

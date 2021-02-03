@@ -98,7 +98,7 @@ const HeroContainer = styled.section`
   margin-bottom: 7vh;
 
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     height: 269px;
   }
 `;
@@ -125,7 +125,7 @@ const HeroContent = styled.div`
     color: black;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 90%;
     height: 125px;
     padding: 18px 33px 22px;
@@ -177,7 +177,7 @@ const SearchContainer = styled.div`
   }
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 300px;
     height: 33px;
     margin: 0 auto;

@@ -50,7 +50,7 @@ const AboutContainer = styled.section`
   width: 100%;
   margin: 0 auto;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 300px;
     padding: 0;
     opacity: 0.9;
@@ -65,7 +65,7 @@ const AboutBody = styled.div`
   padding-right: 25%;
   justify-content: center;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -92,7 +92,7 @@ const AboutHeader = styled.div`
 
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     h1 {
       font-family: HelveticaNeue;
       font-size: 1.5rem;
@@ -123,7 +123,7 @@ const AboutContent = styled.div`
     height: 166px;
     object-fit: contain;
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
     width: 304px;
@@ -140,7 +140,7 @@ const DownloadBtns = styled.div`
   flex-direction: row;
   margin-left: 25%;
   padding: 25px;
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     margin: 0 auto;
     padding: 0;
   }
@@ -157,7 +157,7 @@ const AppleBtn = styled.div`
   align-items: center;
   margin-right: 20px;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 127px;
     height: 37px;
     padding: 5.6px 7.9px 5.1px 7.3px;
@@ -173,7 +173,7 @@ const AppleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 17px;
       height: 22px;
@@ -192,7 +192,7 @@ const GoogleBtn = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 126.8px;
     height: 36.8px;
     padding: 5px 12.2px 5.8px 10.5px;
@@ -208,7 +208,7 @@ const GoogleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     img {
       width: 14px;
       height: 18px;

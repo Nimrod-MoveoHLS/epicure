@@ -38,7 +38,7 @@ export const BurgerIcon = styled.div`
     width: 18px;
     height: 14px;
     object-fit: contain;
-    margin: 7px 140px 6px 25px;
+    margin: 7px 160px 6px 25px;
   }
 `;
 export const LogoIcon = styled.div`

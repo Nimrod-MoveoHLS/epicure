@@ -8,12 +8,14 @@ import IconMeaning from "../../components/IconsMeaning/iconMeaning";
 import About from "../../components/About/About";
 import WeeklyChef from "../../components/WeeklyChef/WeeklyChef";
 import WeeklyChefRest from "../../components/WeeklyChef/WeeklyChefRest";
+import FilterBtn from "../../components/FilterBtns/FilterBtn"
 
 
 const Home = () => {
   return (
     <HomeContainer>
       <HeroHeader />
+      <FilterBtn/>
       <PopularHeader>
         <h1>THE POPULAR RESTAURANTS IN EPICURE</h1>
       </PopularHeader>
@@ -57,7 +59,7 @@ const PopularHeader = styled.div`
   text-align: center;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     margin-top: 5vh;
     font-family: HelveticaNeue;
   font-size: 1rem;
@@ -89,7 +91,7 @@ a:link {
          color: black;
 
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
     display: none;
 }
 `;
