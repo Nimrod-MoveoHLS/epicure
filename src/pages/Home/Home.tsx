@@ -7,6 +7,7 @@ import SignatureDish from "../../components/SignatureDish/SignatureDish"
 import IconMeaning from "../../components/IconsMeaning/iconMeaning";
 import About from "../../components/About/About";
 import WeeklyChef from "../../components/WeeklyChef/WeeklyChef";
+import WeeklyChefRest from "../../components/WeeklyChef/WeeklyChefRest";
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
 
         <IconMeaning />
       <WeeklyChef />
+      <WeeklyChefRest/>
       <About />
     </HomeContainer>
   );
@@ -69,15 +71,7 @@ h1{
 
   }
 `;
-// const PopularRestContainer = styled.div`
-//   display: flex;
-//   margin: 0 auto;
-//   @media only screen and (max-width: 550px) {
-//     display: flex;
-//     margin: 0;
-//     overflow-x: auto;
-//   }
-// `;
+
 const RestLink = styled.div`
 margin-top: 2vh;
 margin-left: 70%;

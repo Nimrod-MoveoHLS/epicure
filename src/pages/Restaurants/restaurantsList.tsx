@@ -23,7 +23,6 @@ const RestaurantsList = () => {
     }
     setRestaurants(dataArray);
     setfilteredRest(dataArray)
-    console.log(restaurants);
   };
 
   const filterHandler = (e: any) => {

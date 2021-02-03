@@ -56,7 +56,7 @@ function DishList({ match }: RouteComponentProps<any>) {
         console.log("Error getting document:", error);
       });
   };
-console.log(filteredDishes)
+  
   const filterHandler = (e: any) => {
     if (e.target.value === "breakfest") {
       setFilteredDishes(dishes.filter((card) => card.breakfest));
@@ -69,6 +69,8 @@ console.log(filteredDishes)
     }
   };
 
+  ;
+  
 
   return (
     <Container>
@@ -114,7 +116,7 @@ console.log(filteredDishes)
       </SignatureDishContainer>
 
     </DishContainer>
-      <Modal showModal={showModal} setShowModal={setShowModal} selectedDishId={selectedDishId != null} setselectedDishId={setselectedDishId} dish={dishes.find(dish => dish.id === selectedDishId || {})} />
+      <Modal showModal={showModal} setShowModal={setShowModal} selectedDishId={selectedDishId != null} setselectedDishId={setselectedDishId} dish={dishes.find(dish => dish.id === selectedDishId)} />
      </Container> 
     
   );
@@ -343,10 +345,10 @@ const FilterContainer = styled.section`
     outline: none;
   }
   button:active {
-  padding-bottom: 10px;
+  padding-bottom: 25px;
   border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
   button:focus {
-    padding-bottom: 10px;
+    padding-bottom: 25px;
   border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
 
   @media only screen and (max-width: 550px) {
@@ -358,5 +360,11 @@ const FilterContainer = styled.section`
       font-family: HelveticaNeue;
       font-size: 1rem;
     }
+    button:active {
+  padding-bottom: 15px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
+  button:focus {
+    padding-bottom: 15px;
+  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
   }
 `;

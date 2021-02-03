@@ -10,8 +10,8 @@ export interface CardProps {
   icon?: string;
   price?: number;
   restaraunt?: string;
-  isDish?: string;
-  isRest?: string;
+  isDish?: any;
+  isRest?: any;
   isSignatureDish?:string
   isPopular?:boolean
   cardData? : any
@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({
         <h1>{restaraunt}</h1>
         </CardHeader>}
       {isRest && (
-        <RestImage>
+        <RestImage className="rest-image">
           <img src={img} alt={alt}></img>
         </RestImage>
       )}
@@ -154,7 +154,7 @@ const DishImage = styled.div`
     width: 360px;
   height: 212.2px;
   object-fit: cover;
-
+cursor: pointer;
   }
 
   @media only screen and (max-width: 550px) {

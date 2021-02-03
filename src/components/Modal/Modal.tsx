@@ -1,11 +1,11 @@
 import * as React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 export interface ModalProps {
   showModal: any;
   setShowModal: any;
-  dish?: any;
+  dish: any;
   setselectedDishId?: any;
   selectedDishId?: any;
 }
@@ -17,26 +17,40 @@ const Modal: React.FC<ModalProps> = ({
   setselectedDishId,
   selectedDishId,
 }) => {
-  console.log(dish);
+    
   const [count, setCount] = useState(0);
   const modalRef: any = useRef();
 
-  console.log(dish);
-  
   const closeModal = (e: any) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
   };
 
+
+  const keyPress = useCallback(
+    e => {
+      if (e.key === 'Escape' && showModal) {
+        setShowModal(false);
+      }
+    },
+    [setShowModal, showModal]
+  );
+
+  useEffect(
+    () => {
+      document.addEventListener('keydown', keyPress);
+      return () => document.removeEventListener('keydown', keyPress);
+    },
+    [keyPress]
+  );
   return (
     <>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
           <ModalContainer>
-            <CloseModalButton
-              onClick={() => setShowModal(false)}
-            >X
+            <CloseModalButton onClick={() => setShowModal(false)}>
+              X
             </CloseModalButton>
             <RestImage>
               <img src={dish.modalImage} alt={dish.alt}></img>
@@ -93,19 +107,18 @@ const Modal: React.FC<ModalProps> = ({
 export default Modal;
 
 const Background = styled.div`
-    z-index: 999;
-    width: 100vw;
-    height: 100vw;
+  z-index: 999;
+  width: 100vw;
+  height: 100vw;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-    top: 0;
-    @media only screen and (max-width: 550px) {
+  top: 0;
+  @media only screen and (max-width: 550px) {
     width: 100%;
     height: 100%;
-
   }
 `;
 const ModalContainer = styled.div`
@@ -120,7 +133,7 @@ const ModalContainer = styled.div`
     top: 0vh;
     width: 100vw;
     position: absolute;
-  z-index: 100;
+    z-index: 100;
   }
 `;
 
@@ -133,9 +146,9 @@ const RestImage = styled.div`
 
   @media only screen and (max-width: 550px) {
     img {
-        width: 100%;
-  height: 100%;
-  object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 `;
@@ -185,6 +198,7 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
   letter-spacing: 1.12px;
   text-align: center;
   }
+}
 `;
 
 const ContentOptionsOne = styled.div`
@@ -211,6 +225,7 @@ const ContentOptionsTwo = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+
   h1 {
     font-family: HelveticaNeue;
     width: 180px;
@@ -270,6 +285,7 @@ const Quantity = styled.div`
     margin-left: 20px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
 `;
 const Icon = styled.div`
@@ -322,6 +338,7 @@ const AddButton = styled.button`
   margin: 0 auto;
   margin-top: 3vh;
   margin-bottom: 3vh;
+  cursor: pointer;
 
   h1 {
     font-family: HelveticaNeue;

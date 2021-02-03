@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-
-
 const WeeklyChef = () => {
+
+
   return (
     <WeeklyContainer>
       <WeeklyHeader>
@@ -22,14 +22,13 @@ const WeeklyChef = () => {
           expressed in the every detail of each and every dish.
         </p>
       </WeeklyContent>
-
     </WeeklyContainer>
   );
 };
 
 export default WeeklyChef;
 const WeeklyContainer = styled.section`
- width: 80%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,16 +38,14 @@ const WeeklyContainer = styled.section`
     width: 100%;
     align-items: center;
     margin-top: 10vh;
-
   }
-
 `;
 const WeeklyHeader = styled.section`
   display: flex;
   justify-content: center;
 
   h1 {
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
     font-family: HelveticaNeue;
     font-size: 30px;
     font-weight: 100;
@@ -60,14 +57,13 @@ const WeeklyHeader = styled.section`
   @media only screen and (max-width: 550px) {
     width: 100%;
     align-items: center;
-h1 {
-    font-family: HelveticaNeue;
-  font-size: 1rem;
-  font-weight: 100;
-  letter-spacing: 0.93px;
-  text-align: center;
-}
-
+    h1 {
+      font-family: HelveticaNeue;
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 0.93px;
+      text-align: center;
+    }
   }
 `;
 const WeeklyContent = styled.section`
@@ -92,27 +88,27 @@ const WeeklyContent = styled.section`
     object-fit: contain;
   }
 
-
   @media only screen and (max-width: 550px) {
     display: flex;
-  flex-direction: column;
-  justify-content: center;
+    flex-direction: column;
+    justify-content: center;
 
-
-  p{
+    p {
       margin-top: 2vh;
-    max-width: 325px;
-  height: 183px;
-  font-family: HelveticaNeue;
-  font-size: 1rem;
-  font-weight: 100;
-  letter-spacing: 1.04px;
-  text-align: center
-  }
-  img {
-    width: 334px;
-  height: 239.4px;
-    object-fit: contain;
-  }
+      max-width: 325px;
+      height: 183px;
+      font-family: HelveticaNeue;
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 1.04px;
+      text-align: center;
+    }
+    img {
+      width: 334px;
+      height: 239.4px;
+      object-fit: contain;
+    }
   }
 `;
+
+

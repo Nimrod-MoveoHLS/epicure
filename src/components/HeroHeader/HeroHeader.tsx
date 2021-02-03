@@ -1,8 +1,62 @@
 import * as React from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import BackgroundImg from "../../background-image/hero-picture.png";
+import { Subject } from "rxjs";
+import {
+  filter,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap
+} from "rxjs/operators";
+// import { fetchData } from "./api";
 
 const HeroHeader = () => {
+  const [searchKey, setSearchKey] = useState("");
+  const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const subjectRef:any = useRef();
+
+
+  function onChangeSearchKey(e:any) {
+    const searchKey = e.target.value;
+    setSearchKey(searchKey);
+    subjectRef.current.next(searchKey);
+  }
+
+  async function fetchData(keyword = "") {
+    const response = await fetch("./data.json");
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    return data.filter((data_1: any) => data_1.title.toLowerCase().includes(keyword.toLowerCase())
+    );
+  }
+  
+
+  useEffect(() => {
+    subjectRef.current = new Subject();
+    const subscription = subjectRef.current
+      .pipe(
+        filter(function(text:any) {
+          return text.length >= 2; 
+        }),
+        debounceTime(550),
+        distinctUntilChanged(),
+        switchMap((keyword:any) => {
+          setIsLoading(true);
+          return fetchData(keyword);
+        })
+      )
+      .subscribe((data:any) => {
+        setRestaurants(data);
+        setIsLoading(false);
+      });
+      return () => {
+        subscription.unsubscribe();
+      };
+    }, []);
+
   return (
     <HeroContainer>
       <HeroContent>
@@ -12,8 +66,17 @@ const HeroHeader = () => {
           <input
             type="text"
             placeholder="Search for retaraunt cuisine, chef"
+            value={searchKey} onChange={onChangeSearchKey}
           ></input>
         </SearchContainer>
+        <div>
+        {isLoading ? "Loading" : null}
+      <ul>
+        {restaurants.map((city:any) => {
+          return <li key={city.id}>{city.title}</li>;
+        })}
+      </ul>
+        </div>
       </HeroContent>
     </HeroContainer>
   );

@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
   margin: 0 auto;
   justify-content: space-between;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     width: 100vw;
   }
 `;
@@ -32,7 +32,7 @@ export const RightNav = styled.div`
 export const BurgerIcon = styled.div`
   display: none;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: block;
     justify-content: center;
     width: 18px;
@@ -94,7 +94,7 @@ a:active {
     padding-bottom: 10px;
   border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
@@ -110,7 +110,7 @@ export const SearchContainer = styled.div`
   border: solid 0.5px black;
   background-color: rgba(255, 255, 255, 0.11);
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
@@ -127,7 +127,7 @@ export const Search = styled.div`
   text-align: center;
   color: black;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
@@ -151,7 +151,7 @@ export const SearchIcon = styled.div`
 export const SearchIconMobile = styled.div`
   display: none;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: block;
     width: 18px;
     height: 18px;
@@ -165,7 +165,7 @@ export const UserIcon = styled.div`
   margin-right: 28px;
   object-fit: contain;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     margin-left: 18px;
     margin-right: 18px;
     width: 18px;
@@ -178,7 +178,7 @@ export const BagIcon = styled.div`
   width: 22px;
   object-fit: contain;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     width: 18px;
     height: 18px;
     margin-right: 31px;
