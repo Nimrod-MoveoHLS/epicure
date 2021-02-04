@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
 margin-right: 12.07%;
 margin-left:12.07%;
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
   margin-left:20px;
   margin-right:0;
 }
@@ -54,7 +54,7 @@ const SignatureDishContainer = styled.div`
     text-decoration: none;
     color: black;
   }
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     display: flex;
     margin: 0;
     overflow-x: auto;

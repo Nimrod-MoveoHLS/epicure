@@ -108,11 +108,12 @@ h1{
 
 const RestLink = styled.div`
 margin-top: 31px;
-margin-left: 69%;
+margin-left: 70%;
 font-size: 1.875rem;
 letter-spacing: 2px;
 font-family: HelveticaNeue;
 color: black;
+font-weight:500;
 a:link {
           text-decoration: none;
           color: black;

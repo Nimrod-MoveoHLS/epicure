@@ -50,7 +50,7 @@ export default About;
 const ContainerContent = styled.div`
     margin-right:15.57%;
   margin-left:15.57%;
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
 margin-left:9.33%;
 margin-right:9.33%;
   }
@@ -63,7 +63,7 @@ const AboutContainer = styled.section`
   width: auto;
 margin-top: 117px;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     height: 605px;
     width: 100%;
     opacity: 0.9;
@@ -89,7 +89,7 @@ const AboutBody = styled.div`
 
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,7 +124,7 @@ const AboutHeader = styled.div`
   }
 
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     h1 {
       font-family: HelveticaNeue;
       font-size: 0.875rem;
@@ -148,7 +148,7 @@ const AboutContent = styled.div`
     height: 166px;
     object-fit: contain;
   }
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     display: flex;
     flex-direction: column;
     margin-top:32px;
@@ -166,10 +166,11 @@ const DownloadBtns = styled.div`
   margin-top: 23px;
 
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     margin: 0 auto;
     padding: 0;
     margin-top:34px;
+    justify-content: center;
   }
 `;
 
@@ -184,7 +185,7 @@ const AppleBtn = styled.div`
   align-items: center;
   margin-right: 20px;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     width: 127px;
     height: 37px;
     padding: 5.6px 7.9px 5.1px 7.3px;
@@ -200,7 +201,7 @@ const AppleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     img {
       width: 17px;
       height: 22px;
@@ -225,7 +226,7 @@ const GoogleBtn = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     width: 126.8px;
     height: 36.8px;
     padding: 5px 12.2px 5.8px 10.5px;
@@ -241,7 +242,7 @@ const GoogleBtnContent = styled.div`
     font-size: 13px;
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     img {
       width: 14px;
       height: 18px;
