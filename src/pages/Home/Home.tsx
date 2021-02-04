@@ -17,19 +17,18 @@ const Home = () => {
       <HeroHeader />
       <FilterBtn/>
       <PopularHeader>
-        <h1>THE POPULAR RESTAURANTS IN EPICURE</h1>
+        <h1>THE POPULAR RESTAURANTS IN EPICURE :</h1>
       </PopularHeader>
       <PopularRestaurants/>
       <RestLink>
       <Link to='/restaurants'>
-      All Restaurants
+      All Restaurants &#62;&#62;
           </Link>
       </RestLink>
-      <PopularHeader>
+      <SignatureHeader>
         <h1>SIGNATURE DISH OF :</h1>
-      </PopularHeader>
+      </SignatureHeader>
       <SignatureDish/>
-
         <IconMeaning />
       <WeeklyChef />
       <WeeklyChefRest/>
@@ -46,13 +45,44 @@ const HomeContainer = styled.section`
   display: flex;
   flex-direction: column;
 `;
+
+const SignatureHeader = styled.div`
+  text-align: center;
+  font-size: 1.875rem;
+  margin-top: 87px;
+  margin-bottom: 42px;
+  h1{
+    font-family: HelveticaNeue;
+  font-size: 1.875rem;
+  font-weight: 100;
+  line-height: 1.33;
+  letter-spacing: 1.25px;
+  text-align: center;
+  }
+  @media only screen and (max-width: 650px) {
+    margin-top: 100px;
+    margin-bottom: 13px;
+
+h1{
+  font-family: "HelveticaNeue";
+  font-size: 0.875rem;
+  letter-spacing: 0.93px;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1.57;
+  letter-spacing: 0.93px;
+}
+
+  }
+
+`
 const PopularHeader = styled.div`
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 140px;
+  margin-bottom: 42px;
   h1{
-    margin-bottom:2vh;
-    font-family: HelveticaNeue;
-  font-size: 2rem;
+    font-family: "HelveticaNeue";
+  font-size: 1.875rem;
   font-weight: 100;
   line-height: 1.33;
   letter-spacing: 1.25px;
@@ -60,24 +90,26 @@ const PopularHeader = styled.div`
   }
 
   @media only screen and (max-width: 650px) {
-    margin-top: 5vh;
-    font-family: HelveticaNeue;
-  font-size: 1rem;
-  font-weight: 100;
-  letter-spacing: 0.93px;
-  text-align: center;
+    margin-top: 51px;
+    margin-bottom: 13px;
 
 h1{
-    font-size: 16px;
+  font-family: "HelveticaNeue";
+  font-size: 0.875rem;
+  letter-spacing: 0.93px;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1.57;
+  letter-spacing: 0.93px;
 }
 
   }
 `;
 
 const RestLink = styled.div`
-margin-top: 2vh;
-margin-left: 70%;
-font-size: 30px;
+margin-top: 31px;
+margin-left: 69%;
+font-size: 1.875rem;
 letter-spacing: 2px;
 font-family: HelveticaNeue;
 color: black;
@@ -91,7 +123,7 @@ a:link {
          color: black;
 
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
     display: none;
 }
 `;

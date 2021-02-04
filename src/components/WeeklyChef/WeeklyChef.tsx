@@ -28,16 +28,16 @@ const WeeklyChef = () => {
 
 export default WeeklyChef;
 const WeeklyContainer = styled.section`
-  width: 80%;
-  margin: 0 auto;
+  width: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5vh;
+  margin-top: 100px;
 
   @media only screen and (max-width: 650px) {
     width: 100%;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 71px;
+
   }
 `;
 const WeeklyHeader = styled.section`
@@ -45,13 +45,13 @@ const WeeklyHeader = styled.section`
   justify-content: center;
 
   h1 {
-    margin-bottom: 5vh;
     font-family: HelveticaNeue;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 100;
     letter-spacing: 2px;
     text-align: center;
     color: black;
+    margin-bottom:37px
   }
 
   @media only screen and (max-width: 650px) {
@@ -63,17 +63,20 @@ const WeeklyHeader = styled.section`
       font-weight: 100;
       letter-spacing: 0.93px;
       text-align: center;
+      margin-bottom:16px;
+
     }
   }
 `;
 const WeeklyContent = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-
+  justify-content: space-between;
+    margin-right:15.57%;
+  margin-left:15.57%;
   p {
-    width: 540px;
-    height: 292px;
+    width: 50%;
+    /* height: 292px; */
     font-family: HelveticaNeue;
     font-size: 1.5rem;
     font-weight: 100;
@@ -86,27 +89,32 @@ const WeeklyContent = styled.section`
     width: 433px;
     height: 338px;
     object-fit: contain;
+    margin-right:63px;
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 850px) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* display: none; */
 
     p {
-      margin-top: 2vh;
-      max-width: 325px;
-      height: 183px;
+      width: 99%;
+      /* max-width: 325px; */
       font-family: HelveticaNeue;
-      font-size: 1rem;
+      font-size: 0.844rem;
       font-weight: 100;
       letter-spacing: 1.04px;
       text-align: center;
+      align-items: center;
+      line-height: 1.4;
+
     }
     img {
       width: 334px;
       height: 239.4px;
       object-fit: contain;
+      margin-right:0;
+
     }
   }
 `;

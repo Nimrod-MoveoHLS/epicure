@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  height: 53px;
+  height: 62px;
   background-color: white;
-  padding-top: 14px;
-  padding-bottom: 5px;
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   justify-content: space-between;
 
   @media (max-width: 750px) {
     width: 100vw;
+    height: 45px;
   }
 `;
 
@@ -20,6 +19,11 @@ export const LeftNav = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: start;
+  margin-left:8.78vw;
+  @media (max-width: 750px) {
+    margin-left:5.14%
+;
+  }
 `;
 
 export const RightNav = styled.div`
@@ -27,6 +31,11 @@ export const RightNav = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-right:8.78vw;
+  @media (max-width: 750px) {
+    margin-right:5.14%
+;
+  }
 `;
 
 export const BurgerIcon = styled.div`
@@ -38,7 +47,7 @@ export const BurgerIcon = styled.div`
     width: 18px;
     height: 14px;
     object-fit: contain;
-    margin: 7px 160px 6px 25px;
+    /* margin: 7px 36vw 6px 25px; */
   }
 `;
 export const LogoIcon = styled.div`
@@ -47,10 +56,18 @@ export const LogoIcon = styled.div`
   object-fit: contain;
   margin: 0 15px 1px 0;
 
-  @media (max-width: 650px) {
-    width: 31px;
+  @media (max-width: 750px) {
+    margin: 0;
+
+    img {
+      width: 31px;
     height: 30px;
     object-fit: contain;
+    position: absolute;
+    left: calc(50% - 15px);
+    margin-right:46px
+        }
+
   }
 `;
 
@@ -60,8 +77,9 @@ export const Logo = styled.div`
   font-weight: 100;
   letter-spacing: 1.35px;
   color: black;
+  margin-right:2.15vw;
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
@@ -69,7 +87,7 @@ export const Logo = styled.div`
 export const MenuLinks = styled.div`
   text-decoration: none;
   font-family: HelveticaNeue;
-  margin: 7px 28px 6px 31px;
+margin-right:1.94vw;
   font-size: 1.125rem;
   font-weight: 100;
   letter-spacing: 1.92px;
@@ -103,13 +121,37 @@ export const SearchContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 415px;
-  padding: 7px 13px 5px 16px;
+  width: 29.64vw;
+  height: 34px;
+align-items:center;
   object-fit: contain;
   border-radius: 4px;
   border: solid 0.5px black;
   background-color: rgba(255, 255, 255, 0.11);
 
+  img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-right: 13px
+  }
+  input {
+    opacity: 0.8;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    object-fit: contain;
+    border-radius: 4px;
+    font-family: HelveticaNeue;
+    font-size: 1.125rem;
+    font-weight: 100;
+    letter-spacing: 1.29px;
+    color: black;
+    margin-left: 16px;
+    :focus {
+    outline: none;
+  }
+  }
   @media (max-width: 750px) {
     display: none;
   }
@@ -117,7 +159,6 @@ export const SearchContainer = styled.div`
 
 export const Search = styled.div`
   width: 100%;
-  height: 21px;
   border: none;
   opacity: 0.8;
   font-family: HelveticaNeue;
@@ -133,7 +174,7 @@ export const Search = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 90%;
+  width: 99%;
   border: none;
   font-size: 20px;
 
@@ -146,42 +187,63 @@ export const SearchIcon = styled.div`
   width: 22px;
   height: 22px;
   object-fit: contain;
+  @media (max-width: 750px) {
+    img{
+      width: 18px;
+    height: 18px;
+    object-fit: contain;
+    }
+ 
+  }
 `;
 
 export const SearchIconMobile = styled.div`
   display: none;
 
   @media (max-width: 750px) {
-    display: block;
-    width: 18px;
+    img {
+      width: 18px;
     height: 18px;
     object-fit: contain;
+    }
+    display: block;
+   
   }
 `;
 
 export const UserIcon = styled.div`
-  width: 23px;
+img{
   margin-left: 28px;
   margin-right: 28px;
   object-fit: contain;
+}
 
   @media (max-width: 750px) {
-    margin-left: 18px;
-    margin-right: 18px;
+
+  img{
+    margin-left: 26px;
+  margin-right: 26px;
     width: 18px;
     height: 18px;
     object-fit: contain;
   }
+  }
 `;
 
 export const BagIcon = styled.div`
+img{
   width: 22px;
+  height: 22px;
   object-fit: contain;
+}
+  
 
   @media (max-width: 750px) {
+    img{
     width: 18px;
     height: 18px;
-    margin-right: 31px;
+    /* margin-right: 31px; */
     object-fit: contain;
+    }
   }
 `;

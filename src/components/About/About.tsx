@@ -4,18 +4,21 @@ import styled from "styled-components";
 const About = () => {
   return (
     <AboutContainer>
-      <AboutBody>
+      <ContainerContent>
         <AboutHeader>
-          <h1>About Us</h1>
+          <h1>ABOUT US</h1>
+        </AboutHeader>
+      <AboutBody>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus
             vel justo fermentum bibendum non eu ipsum. Cras porta malesuada
             eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna
-            sodales porta. Vivamus elit urna, dignissim a vestibulum. Lorem
+            sodales porta. Vivamus elit urna, dignissim a vestibulum.
+            <br></br>
+             Lorem
             ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel
             justo fermentum bibendum no eu ipsum. Cras porta malesuada eros.
           </p>
-        </AboutHeader>
         <AboutContent>
           <img src="../images/about-logo.png" alt="about-logo"></img>
         </AboutContent>
@@ -37,40 +40,71 @@ const About = () => {
           </GoogleBtnContent>
         </GoogleBtn>
       </DownloadBtns>
+      </ContainerContent>
     </AboutContainer>
   );
 };
 
 export default About;
 
+const ContainerContent = styled.div`
+    margin-right:15.57%;
+  margin-left:15.57%;
+  @media only screen and (max-width: 650px) {
+margin-left:9.33%;
+margin-right:9.33%;
+  }
+`
 const AboutContainer = styled.section`
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
-  width: 100%;
-  margin: 0 auto;
+  height: 526px;
+  width: auto;
+margin-top: 117px;
 
   @media only screen and (max-width: 650px) {
-    width: 300px;
-    padding: 0;
+    height: 605px;
+    width: 100%;
     opacity: 0.9;
     background-color: #fafafa;
+    /* margin-top: 97.6px; */
+
   }
 `;
 
 const AboutBody = styled.div`
   display: flex;
   flex-direction: row;
-  padding-left: 25%;
-  padding-right: 25%;
-  justify-content: center;
+  justify-content: space-between;
+  p {
+    margin-top: 20px;
+    font-family: HelveticaNeue;
+    font-size: 1.375rem;
+    text-align: left;
+    width: 70%;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 1.69px;
+
+  }
 
   @media only screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 0;
     width: 100%;
-    margin: 7px 0 32px;
+
+    p {
+      font-family: HelveticaNeue;
+      font-size: 0.875rem;
+      text-align: center;
+      font-weight: 100;
+      letter-spacing: 1.04px;
+      width: 100%;
+      margin-top:7px;
+    }
   }
 `;
 const AboutHeader = styled.div`
@@ -78,39 +112,30 @@ const AboutHeader = styled.div`
   flex-direction: column;
   h1 {
     font-family: HelveticaNeue;
-    font-size: 2rem;
-    font-weight: 100;
-    margin-bottom: 2vh;
+    font-size: 1.875rem;
+    font-size: 30px;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.89px;
+      margin-top:65px;
 
   }
-  p {
-    font-family: HelveticaNeue;
-    font-size: 22px;
-    text-align: left;
-    width: 80%;
-    font-weight: 100;
 
-  }
 
   @media only screen and (max-width: 650px) {
     h1 {
       font-family: HelveticaNeue;
-      font-size: 1.5rem;
+      font-size: 0.875rem;
       font-weight: 100;
       letter-spacing: 0.93px;
       text-align: center;
-      margin-bottom: 2vh;
+      /* margin-bottom: 2vh; */
+      margin-top:28px;
+
     }
-    p {
-      font-family: HelveticaNeue;
-      font-size: 1.2rem;
-      text-align: center;
-      margin-top: 2vh;
-      font-weight: 100;
-      letter-spacing: 1.04px;
-      width: 100%;
-      margin-bottom: 2vh;
-    }
+
   }
 `;
 
@@ -126,7 +151,7 @@ const AboutContent = styled.div`
   @media only screen and (max-width: 650px) {
     display: flex;
     flex-direction: column;
-    width: 304px;
+    margin-top:32px;
     img {
       width: 137px;
       height: 128px;
@@ -138,11 +163,13 @@ const AboutContent = styled.div`
 const DownloadBtns = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 25%;
-  padding: 25px;
+  margin-top: 23px;
+
+
   @media only screen and (max-width: 650px) {
     margin: 0 auto;
     padding: 0;
+    margin-top:34px;
   }
 `;
 
@@ -180,6 +207,12 @@ const AppleBtnContent = styled.div`
       margin: 0 9.7px 4.3px 0;
       object-fit: contain;
     }
+    h5{
+      font-size:0.575rem
+    }
+    h3{
+      font-size:0.738rem
+    }
   }
 `;
 const GoogleBtn = styled.div`
@@ -214,6 +247,12 @@ const GoogleBtnContent = styled.div`
       height: 18px;
       margin: 4.8px 15.1px 3.2px 0;
       object-fit: contain;
+    }
+    h5{
+      font-size:0.575rem
+    }
+    h3{
+      font-size:0.738rem
     }
   }
 `;

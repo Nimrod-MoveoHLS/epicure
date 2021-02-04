@@ -178,7 +178,7 @@ const HeaderContent = styled.div`
   }
 `;
 const IsOpen = styled.div<{ readonly isOpen?: boolean }>`
-  margin-top: 3vh;
+  margin-top: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -329,8 +329,8 @@ const FilterContainer = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3vh;
-  margin-top: 5vh;
+  margin-bottom: 4vh;
+  margin-top: 6vh;
   button {
     height: 21px;
     margin: 1px 36.3px 0;

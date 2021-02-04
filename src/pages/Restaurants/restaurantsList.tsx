@@ -84,7 +84,7 @@ const RestarauntContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 15%;
+  padding-left: 11%;
   padding-right: 15%;
   a:link {
     text-decoration: none;
@@ -112,7 +112,7 @@ const RestarauntContainer = styled.section`
 const Cardscontainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-row-gap: 30px; */
+  grid-row-gap: 20px;
   .card-content {
   background-color: #f9f4ea;
 }

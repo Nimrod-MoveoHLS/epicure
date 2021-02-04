@@ -28,16 +28,15 @@ export default iconMeaning;
 
 const MeaningContainer = styled.section`
   height: 265px;
-  padding-left:25%;
-  padding-right:25%;
+width: auto;
   opacity: 0.9;
   background-color: #fafafa;
   align-items: center;
   text-align: center;
-  margin-top: 7vh;
-
+margin-top: 87px;
   h2 {
-    margin-bottom: 2vh;
+    margin-top: 41px;
+    margin-bottom: 29.4px;
     font-family: HelveticaNeue;
   font-size: 2rem;
   font-weight: 100;
@@ -48,16 +47,12 @@ const MeaningContainer = styled.section`
 
   @media only screen and (max-width: 650px) {
     height: 134px;
-    padding: 0;
     opacity: 0.9;
-    background-color: #fafafa;
-    margin-top: 5vh;
-    width: 80vw;
-    margin: 0 auto;
+    margin-top: 95.1px;
 
     h2 {
-      margin-bottom: 2vh;
-      margin-top: 4vh;
+      margin-bottom: 22px;
+      margin-top: 16px;
       font-family: HelveticaNeue;
   font-size: 1rem;
   font-weight: 100;
@@ -69,7 +64,21 @@ const MeaningContainer = styled.section`
 
 const IconsGroup = styled.div`
   display: flex;
+  /* justify-content: space-between; */
   justify-content: space-between;
+   align-items: center;
+  margin-right: 33.71%;
+margin-left:33.71%;
+img{
+  margin-bottom: 29.4px;
+}
+@media only screen and (max-width: 650px) {
+  margin-right: 18.4%;
+margin-left: 18.4%;
+img{
+  margin-bottom: 16px;
+}
+}
 `;
 
 const SpicyIcon = styled.div`
@@ -79,7 +88,6 @@ const SpicyIcon = styled.div`
   img {
     width: 80px;
     height: 61px;
-    margin: 0 0 29px;
     object-fit: contain;
   }
   p {
@@ -98,6 +106,7 @@ const SpicyIcon = styled.div`
     }
     p {
       font-size: 14px;
+
     }
   }
 `;
@@ -109,8 +118,10 @@ const VegetarianIcon = styled.div`
   img {
     width: 60px;
     height: 60px;
-    margin: 0 26.8px 30px 25.2px;
     object-fit: contain;
+    margin: 0 auto;
+    margin-bottom: 29.4px;
+
   }
   p {
     text-align: center;
@@ -123,11 +134,13 @@ const VegetarianIcon = styled.div`
     img {
       width: 33px;
       height: 34px;
-      margin: 0 15px 16px;
       object-fit: contain;
+      margin-bottom: 16px;
+
     }
     p {
       font-size: 13px;
+
     }
   }
 `;
@@ -139,7 +152,6 @@ const VeganIcon = styled.div`
   img {
     width: 67px;
     height: 67px;
-    margin: 0 2.9px 26.6px 5.1px;
     object-fit: contain;
   }
   p {
@@ -152,9 +164,7 @@ const VeganIcon = styled.div`
   @media only screen and (max-width: 650px) {
     img {
       width: 37px;
-      height: 37px;
-      margin: 0 2px 15px 3px;
-    }
+      height: 37px;    }
     p {
       font-size: 13px;
     }

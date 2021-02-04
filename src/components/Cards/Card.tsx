@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({
     <>
   
     <CardContainer className="card-container" isRest={isRest}>
-      {restaraunt && <CardHeader>
+      {restaraunt && <CardHeader className="card-header">
         <h1>{restaraunt}</h1>
         </CardHeader>}
       {isRest && (
@@ -61,7 +61,7 @@ const Card: React.FC<CardProps> = ({
         </DishImage>
       )}
       {isSignatureDish && (
-        <SignatureDish >
+        <SignatureDish className="signature-image" >
           <img src={img} alt={alt}></img>
         </SignatureDish>
       )}
@@ -94,7 +94,6 @@ export default Card;
 const CardContainer = styled.div<{readonly isRest?:string}>`
   width: 360px;
   overflow: hidden;
-  margin: 1vh;
 
   @media only screen and (max-width: 650px) {
     width:${p => p.isRest ? '160px' : '260px'};
@@ -104,12 +103,13 @@ const CardContainer = styled.div<{readonly isRest?:string}>`
 
 const CardHeader = styled.div`
 h1{
-  font-size:1.5rem;
+  font-size:1.875rem;
   text-align: center;
   font-family: HelveticaNeue;
   font-weight: 100;
-  margin-top:3vh;
-  margin-bottom:2vh;
+  letter-spacing: 1.77px;
+  font-weight: 500;
+    margin-bottom:23px;
 }
 
 @media only screen and(max-width:650px) {
@@ -119,6 +119,7 @@ h1{
 }
 `
 const PopularRestImage = styled.div`
+    height: 224px;
   img {
     width: 360px;
     height: 224px;
@@ -166,6 +167,7 @@ cursor: pointer;
   }
 `;
 const SignatureDish = styled.div`
+    height: 290px;
   img {
     width: 360px;
     height: 290px;
@@ -186,29 +188,24 @@ const CardContent = styled.div<{readonly price?:number; isRest?:string}>`
   text-align: center;
   font-family: HelveticaNeue;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   height:${p => p.price ? '250px' : '100px'};
   width:${p => p.isRest ? '360px' : 'auto'};
 
   h2 {
     font-family: HelveticaNeue;
-  font-weight: 100;
-    margin-bottom: 2vh;
-    padding-top: 20px;
+    font-weight: 500;  
     font-size: 2rem;
     letter-spacing: 2.67px;
   }
 
   p {
-    font-size: 1.563;
+    font-size: 1.563rem;
     font-weight: 100;
     letter-spacing: 1.67px;
-    padding-bottom: 20px;
     width: 80%;
-    margin-top: 2vh;
     margin: 0 auto;
-    font-size: 1.3rem;
   }
 
   @media only screen and (max-width: 650px) {
@@ -271,8 +268,7 @@ const Icon = styled.div`
     width: 39px;
     height: 30px;
     object-fit: contain;
-    margin: 0 auto;
-    margin-bottom: 3vh;
+    /* margin: 0 auto; */
   }
 `;
 
@@ -291,9 +287,10 @@ const Price = styled.div<{ price: number }>`
   }
 
   hr:after {
-    background-color: #f7e0b2;
+    background-color: #f9f4ea;
     content: "₪${(p) => p.price}";
-    font-size: 1.2rem;
+    font-size: 1.556rem;
+    font-weight: 100;
     padding: 0 4px;
     position: relative;
     top: -13px;

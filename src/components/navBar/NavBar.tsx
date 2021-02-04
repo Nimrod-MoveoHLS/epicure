@@ -57,24 +57,21 @@ const NavBar = () => {
       </LeftNav>
       <RightNav>
         <SearchContainer>
-          <Search>
-            <Input
-              type="text"
-              placeholder="Search for restaurant cuisne, chef"
-            ></Input>
-          </Search>
-          <SearchIcon>
-            <img src="../images/search-icon.png" alt="search-icon"></img>
-          </SearchIcon>
+        <input
+            type="text"
+            placeholder="Search for restaraunt cuisine, chef"
+            // value={searchKey} onChange={onChangeSearchKey}
+          ></input>
+            <img src="../images/search-icon.svg" alt="search-icon"></img>
         </SearchContainer>
         <SearchIconMobile>
-          <img src="../images/search-icon.png" alt="search-icon-mobile"></img>
+          <img src="../images/search-icon.svg" alt="search-icon-mobile"></img>
         </SearchIconMobile>
         <UserIcon>
-          <img src="../images/user-icon.png" alt="user-icon"></img>
+          <img src="../images/user-icon.svg" alt="user-icon"></img>
         </UserIcon>
         <BagIcon>
-          <img src="../images/bag-icon.png" alt="bag-icon"></img>
+          <img src="../images/bag-icon.svg" alt="bag-icon"></img>
         </BagIcon>
       </RightNav>
       {isShown && <SideMenu setIsShown={toggle} isShown={isShown} />}

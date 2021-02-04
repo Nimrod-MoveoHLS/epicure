@@ -4,24 +4,26 @@ import * as React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
-  height: 100px;
-  width: 100vw;
+  height: 94px;
+  width: 100%;
 
   justify-content: center;
   ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    list-style: none;
-    text-align: center;
-    font-family: HelveticaNeue;
-    font-weight: 100;
-    font-size: 1.2rem;
-    padding: 0;
+    list-style: none;  
   }
   li {
-    margin: 2vw;
-    font-size: 1rem;
+    margin-right:45px;
+    justify-content: center;
+    margin-top:37px;
+
+
+  }
+  a {
+    font-size: 1.125rem;
+
   }
   a:link {
     text-decoration: none;
@@ -34,15 +36,22 @@ const FooterContainer = styled.footer`
 
   @media screen and (max-width: 650px) {
     height: 126px;
-    padding: 1px 0 23px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 100%;
-
     ul {
       display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;   
+    }
+    li{
+      margin:0;
+      justify-content: space-between;
+      margin: 0 7px 18px 8px;
+
+    }
+    a{
+      font-size:0.75rem;
     }
   }
 `;
@@ -58,7 +67,6 @@ const Footer = () => {
           <a href="/">Term Of Use</a>
         </li>
         <li>
-          {" "}
           <a href="/">Privacy Policy</a>
         </li>
       </ul>
