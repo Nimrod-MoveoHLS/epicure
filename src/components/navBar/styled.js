@@ -33,7 +33,8 @@ export const RightNav = styled.div`
   justify-content: center;
   margin-right:8.78vw;
   @media (max-width: 750px) {
-    margin-right:5.14%
+    margin-right:5.33%
+
 ;
   }
 `;

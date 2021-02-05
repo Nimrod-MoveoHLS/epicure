@@ -6,6 +6,9 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   height: 94px;
   width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  /* position: absolute;
+  bottom: 0; */
 
   justify-content: center;
   ul {

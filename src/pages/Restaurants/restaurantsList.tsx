@@ -42,17 +42,18 @@ const RestaurantsList = () => {
 
   return (
     <RestarauntContainer>
+      <p className="mobile-header">RESTAURANTS</p>
       <FilterContainer>
-        <button value="all" onClick={(e) => filterHandler(e)}>
+        <button className="btn-all" value="all" onClick={(e) => filterHandler(e)}>
           All
         </button>
-        <button value="new" onClick={(e) => filterHandler(e)}>
+        <button value="new" className="btn-new" onClick={(e) => filterHandler(e)}>
           New
         </button>
-        <button value="popular" onClick={(e) => filterHandler(e)}>
+        <button value="popular" className="btn-popular" onClick={(e) => filterHandler(e)}>
           Most Popular
         </button>
-        <button value="open" onClick={(e) => filterHandler(e)}>
+        <button value="open" className="btn-open" onClick={(e) => filterHandler(e)}>
           Open Now
         </button>
       </FilterContainer>
@@ -80,13 +81,15 @@ const RestaurantsList = () => {
 
 export default RestaurantsList;
 
+
 const RestarauntContainer = styled.section`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 11%;
-  padding-right: 15%;
-  a:link {
+  justify-content: center; */
+  .mobile-header{
+    display: none;
+  }
+    a:link {
     text-decoration: none;
     color: black;
   }
@@ -99,12 +102,20 @@ const RestarauntContainer = styled.section`
     color: black;
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 750px) {
     display: flex;
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
     align-items: center;
+    .mobile-header{
+    display: block;
+    margin-top:20px;
+    font-family: HelveticaNeue;
+  font-size: 1.25rem;
+  letter-spacing: 1.54px;
+  font-weight: 500;
+  }
   }
 `;
 
@@ -112,18 +123,77 @@ const RestarauntContainer = styled.section`
 const Cardscontainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 20px;
+  grid-gap: 38px;
+  margin-left:12.07%;
+  margin-right:12.07%;
+  .card-container {
+    margin:0;
+    width: 342px;
+    height: 339px;
+  object-fit: contain;
+
+  .rest-image{
+    width: 342px;
+  height: 212.2px;
+  }
+  img{
+    width: 342px;
+  height: 212.2px;
+  }
+  }
   .card-content {
   background-color: #f9f4ea;
+  height: 126.8px;
+  width: 342px;
+
+  justify-content: start;
+
+h2{
+  margin-top:26.6px;
+margin-bottom: 4.2px;
+font-size:2.375rem;
+}
+p{
+  font-size:1.488rem;
+}
+
 }
 .card-price {
   hr :after {
     background-color: black;
   }
 } 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     grid-template-columns: 1fr 1fr;
-    grid-row-gap: 1px;
+    grid-gap: 13px;
+
+    .card-container{
+      width: 162px;
+  height: 190.5px;
+  .rest-image{
+      width: 162px;
+  height: 122px;
+  }
+  img{
+    width: 162px;
+  height: 122px;
+  }
+  .card-content{
+    height: 68.5px;
+    width: 162px;
+h2{
+  font-size:1.075rem;
+  margin-top:13.5px;
+margin-bottom: 7px;
+letter-spacing: 1.15px;
+}
+p{
+  font-size:0.831rem;
+  letter-spacing: 0.89px;
+
+}
+  }
+    }
   }
 `;
 const FilterContainer = styled.section`
@@ -131,13 +201,13 @@ const FilterContainer = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3vh;
-  margin-top: 5vh;
+  margin-bottom: 35px;
+  margin-top: 53px;
   button {
     height: 21px;
-    margin: 1px 36.3px 0;
     font-family: HelveticaNeue;
-    font-size: 1.3rem;
+    padding:0;
+    font-size: 1.125rem;
     font-weight: 100;
     letter-spacing: 1.92px;
     color: gray;
@@ -145,7 +215,19 @@ const FilterContainer = styled.section`
     background-color: white;
     cursor: pointer;
     outline: none;
+
+ 
   }
+  .btn-all {
+      margin-right:47px;
+    }
+
+    .btn-new {
+      margin-right:41px;
+    } 
+    .btn-popular{
+      margin-right:17px;
+    }
   button:active {
     color: black;
   }
@@ -153,14 +235,32 @@ const FilterContainer = styled.section`
     color: black;
   }
 
-  @media only screen and (max-width: 650px) {
-    justify-content: space-evenly;
-    /* width: 80%; */
+  @media only screen and (max-width: 750px) {
+    margin-left:5.33%;
+    margin-right:4.8%;
+    margin-bottom: 21px;
+    margin-top: 22px;
+
+
+
+  
     button {
       height: 21px;
       margin: 0;
       font-family: HelveticaNeue;
       font-size: 1rem;
+      letter-spacing: 1.71px;
+
+    }
+    .btn-all {
+      margin-right:27.3px;
+    }
+
+    .btn-new {
+      margin-right:27.3px;
+    } 
+    .btn-popular{
+      /* margin-right:27.3px; */
     }
   }
 `;

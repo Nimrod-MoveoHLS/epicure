@@ -50,8 +50,9 @@ const Modal: React.FC<ModalProps> = ({
         <Background onClick={closeModal} ref={modalRef}>
           <ModalContainer>
             <CloseModalButton onClick={() => setShowModal(false)}>
-              X
+            <img src="../images/x.svg" alt="x-icon"></img>
             </CloseModalButton>
+            
             <RestImage>
               <img src={dish.modalImage} alt={dish.alt}></img>
             </RestImage>
@@ -61,8 +62,10 @@ const Modal: React.FC<ModalProps> = ({
                 <h2>{dish.title}</h2>
               </Icon>
               <p>{dish.body}</p>
-              <Price price={dish.price}>
-                <hr></hr>
+              </ModalContent>
+
+              <Price  price={dish.price}>
+                <hr ></hr>
               </Price>
               <ContentOptionsOne>
                 <h1>Choose a side</h1>
@@ -90,13 +93,12 @@ const Modal: React.FC<ModalProps> = ({
                 <h1>Quantity</h1>
                 <Quantity>
                   {count}
-                  <button onClick={() => setCount(count + 1)}>+</button>
+                  <img src="../images/plus.svg" alt="plus-icon" onClick={() => setCount(count + 1)}></img>
                 </Quantity>
               </QuantityContainer>
               <AddButton>
                 <h1>ADD TO BAG</h1>
               </AddButton>
-            </ModalContent>
           </ModalContainer>
         </Background>
       ) : null}
@@ -108,14 +110,14 @@ export default Modal;
 
 const Background = styled.div`
   z-index: 999;
-  width: 100vw;
+  width: 100%;
   height: 100vw;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
+  /* top: 0; */
   @media only screen and (max-width: 650px) {
     width: 100%;
     height: 100%;
@@ -123,15 +125,17 @@ const Background = styled.div`
 `;
 const ModalContainer = styled.div`
   background-color: white;
-  top: -30vh;
+  height: 1098px;
+  width: 608px;
+  /* justify-content: center ; */
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 10;
 
   @media only screen and (max-width: 650px) {
     width: 100%;
-    top: 0vh;
-    width: 100vw;
+margin-top:45px;
+    width: 100%;
     position: absolute;
     z-index: 100;
   }
@@ -157,14 +161,16 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
   text-align: center;
   font-family: HelveticaNeue;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: center;
   flex-direction: column;
   width: ${(p) => (p.isRest ? "360px" : "auto")};
+  margin-top:27px;
+
 
   h2 {
     font-family: HelveticaNeue;
     font-weight: 100;
-    margin-bottom: 2vh;
     font-size: 2rem;
     letter-spacing: 2.67px;
   }
@@ -173,10 +179,9 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
     font-size: 1.563;
     font-weight: 100;
     letter-spacing: 1.67px;
-    padding-bottom: 20px;
-    width: 65%;
-    margin-top: 2vh;
-    margin: 0 auto;
+    margin-bottom:14.5px;
+    width: 50%;
+    text-align: center;
     font-size: 1.3rem;
   }
 
@@ -184,7 +189,6 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
     width: ${(p) => (p.isRest ? "160px" : "auto")};
 
     h2 {
-        margin-top: 0;
     }
 
     p {
@@ -200,50 +204,70 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
   }
 }
 `;
+const Icon = styled.div`
+  display: flex;
+  margin-right:21.1px;
+  margin-bottom: 14px;
 
+  img {
+    width: 39px;
+    height: 30px;
+    object-fit: contain;
+    margin-right:21.1px;
+    /* margin-left:141px; */
+
+  }
+`;
 const ContentOptionsOne = styled.div`
+margin-top:42.5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
   text-align: center;
-  margin-bottom: 2.5vh;
+  /* margin-bottom: 2.5vh; */
   h1 {
+    margin-bottom:33px;
     font-family: HelveticaNeue;
-    width: 180px;
-    margin: 0 auto;
+margin:0 auto;
+margin-bottom:33px;
+
+    /* margin: 0 auto; */
     font-size: 20.4px;
     font-weight: 100;
     letter-spacing: 1.46px;
-    margin-bottom: 2.5vh;
-    padding-bottom: 10px;
+        padding-bottom: 4.8px;
+    /* margin-bottom: 2.5vh; */
+    /* padding-bottom: 10px; */
     border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);
   }
 `;
 const ContentOptionsTwo = styled.div`
-  margin-top: 2.5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-top:19px;
+  align-items: start;
+
 
   h1 {
     font-family: HelveticaNeue;
-    width: 180px;
-    margin: 0 auto;
-    padding-bottom: 10px;
+    margin:0 auto;
+    margin-bottom:27px;
     border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);
+    padding-bottom: 4.8px;
     font-size: 20.4px;
     font-weight: 100;
     letter-spacing: 1.46px;
-    margin-bottom: 2.5vh;
+    /* margin-bottom: 2.5vh; */
   }
 `;
 const Inputs = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  margin-top: 15px;
-
+  justify-content: center;
+  margin-bottom:28px;
   font-family: HelveticaNeue;
   font-size: 18px;
   font-weight: 100;
@@ -251,23 +275,33 @@ const Inputs = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  margin-left:195px;
+  label{
+    margin-top:7px;
+  }
+  input{
+    margin-right:20px;
+    width: 28px;
+  height: 28px;
+  }
 `;
 const QuantityContainer = styled.div`
+margin-top:42px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 180px;
-  margin: 0 auto;
-  margin-top: 4vh;
+  width: auto;
+  /* margin: 0 auto; */
+  /* margin-top: 4vh; */
 
   h1 {
     font-family: HelveticaNeue;
+    margin:0 auto;
+
     font-size: 20.4px;
     font-weight: 100;
     letter-spacing: 1.46px;
-    margin-bottom: 2.5vh;
-    padding-bottom: 10px;
     border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);
   }
 `;
@@ -278,47 +312,35 @@ const Quantity = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-  button {
+  margin-top:23.6px;
+  margin-left: 39.6px;
+margin-bottom:50px;
+  img {
     width: 18px;
     height: 18px;
     object-fit: contain;
-    margin-left: 20px;
+    margin-left: 39.6px;
     background-color: transparent;
     border: none;
     cursor: pointer;
   }
 `;
-const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
 
-  img {
-    width: 39px;
-    margin-right: 20px;
-    height: 30px;
-    object-fit: contain;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3vh;
-  }
-`;
 
 const Price = styled.div<{ price: number }>`
+margin-top:14.5px;
   hr {
     border: none;
     font-weight: 100;
     font-family: HelveticaNeue;
     margin: 0 auto;
-    width: 50%;
+    width: 184px;
     border-top: 1px solid black;
     overflow: visible;
     text-align: center;
     height: 5px;
-    margin-bottom: 4.5vh;
-    margin-top: 2vh;
   }
-
+  
   hr:after {
     background-color: white;
     content: "₪${(p) => p.price}";
@@ -327,26 +349,24 @@ const Price = styled.div<{ price: number }>`
     position: relative;
     top: -13px;
   }
+
+
 `;
 
 const AddButton = styled.button`
   width: 206px;
   height: 53px;
-  margin: 50px 65px 0 65px;
+  /* margin: 50px 65px 0 65px; */
   border-radius: 2.1px;
   background-color: black;
-  margin: 0 auto;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  /* margin: 0 auto; */
+  /* margin-top: 3vh; */
+  /* margin-bottom: 3vh; */
   cursor: pointer;
-
+  margin-left:208px;
   h1 {
     font-family: HelveticaNeue;
     font-size: 18.9px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
     letter-spacing: 1.08px;
     text-align: center;
     color: white;
@@ -354,10 +374,16 @@ const AddButton = styled.button`
 `;
 
 const CloseModalButton = styled.div`
+
+img{
+  width: 18px;
+  height: 18px;
+}
   cursor: pointer;
   position: absolute;
-  top: -30px;
+  top: -35px;
   font-size: 2rem;
+  font-weight: 200;
   color: white;
   padding: 0;
   z-index: 10;

@@ -75,14 +75,14 @@ function DishList({ match }: RouteComponentProps<any>) {
   return (
     <Container>
     <DishContainer>
-      <HeaderContainer>
         <HeaderImage mobileImage={header.phoneImage}>
           <img src={header.imageHeader} alt={header.alt}></img>
+        </HeaderImage>
+      <HeaderContainer>
           <HeaderContent>
             <h1>{header.title}</h1>
             <p>{header.body}</p>
           </HeaderContent>
-        </HeaderImage>
       </HeaderContainer>
       <IsOpen isOpen={header.open}> 
             <img src={header.clockImage} alt={header.alt}></img>
@@ -128,18 +128,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
+width: 100%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  /* width: 100%; */
 `;
 const HeaderImage = styled.div<{ readonly mobileImage?: string }>`
   img {
-    width: 1102px;
+    width: 100%;
     height: 395px;
     object-fit: contain;
   }
@@ -160,25 +158,32 @@ const HeaderContent = styled.div`
   font-family: HelveticaNeue;
 
   h1 {
-    margin-top: 2vh;
-    font-size: 2.5rem;
+    margin-top: 27.2px;
+    margin-bottom: 2px;
+    font-size: 3.438rem;
     letter-spacing: 3.67px;
   }
 
   p {
-    font-size: 1.5rem;
-    margin-top: 1vh;
+    font-size: 1.875rem;
     font-weight: 100;
     letter-spacing: 2px;
   }
   @media only screen and (max-width: 650px) {
-    h1 p {
-      margin-top: 1vh;
+    h1{
+      margin-top: 17px;
+      margin-bottom: 1px;
+      font-size:2.188rem;
+      letter-spacing: 2.33px;
+
+    }
+    p{
+      font-size:1.5rem;
     }
   }
 `;
 const IsOpen = styled.div<{ readonly isOpen?: boolean }>`
-  margin-top: 5vh;
+  margin-top: 27.2px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -201,12 +206,20 @@ const IsOpen = styled.div<{ readonly isOpen?: boolean }>`
     height: 17px;
     object-fit: contain;
   }
+
+  @media only screen and (max-width: 650px) {
+    margin-top: 14px;
+    h2 {
+      font-size:0.75rem;
+  letter-spacing: 0.8px;
+    }
+
+  }
 `;
 const DishContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
     height: 100%;
     
 
@@ -222,31 +235,20 @@ const DishContainer = styled.section`
 
 const SignatureDishContainer = styled.div`
   display: grid;
-  margin: 0 auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 30px;
+  margin-left:12.07%;
+  margin-right:12.07%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 53px;
   
   .card-container {
     width: 236px;
-    height: auto;
-    padding: 15px;
+    height: 413px;
     img {
   width: 235.5px;
   height: 150px;
   object-fit: contain
 } 
 
-    
-  @media only screen and (max-width: 650px) {
-  width: 157px;
-    overflow: visible;
-    padding: 5px;
-    img {
-      width: 157px;
-  height: 100px;
-  object-fit: contain
-}
-  }
   }
 .card-content {
   background-color: #f9f4ea;
@@ -254,9 +256,9 @@ const SignatureDishContainer = styled.div`
   font-family: HelveticaNeue;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+      flex-direction: column;
   width: 235.5px;
-  height: 413px;
+  height: 261px;
 
     img {
   width: 235.5px;
@@ -266,13 +268,12 @@ const SignatureDishContainer = styled.div`
 .card-price {
   hr:after{
       background-color: #f9f4ea;
-    } 
+         } 
 } 
 h2 {
     font-family: HelveticaNeue;
   font-weight: 100;
-    /* margin-bottom: -2vh; */
-    padding-top: 20px;
+    margin-top:18px;
     font-size: 2rem;
     letter-spacing: 2.67px;
   }
@@ -281,34 +282,10 @@ h2 {
     font-size: 1.563;
     font-weight: 100;
     letter-spacing: 1.67px;
-    padding-bottom: 20px;
+    margin-top:16px;
     width: 80%;
-    /* margin-top: 2vh; */
-    margin: 0 auto;
     font-size: 1.3rem;
   }
-  
-  @media only screen and (max-width: 650px) {
-    width: 157px;
-    height: 274px;
-    img {
-      width: 157px;
-  height: 100px;
-  object-fit: contain
-} 
-    h2 {
-      font-size: 1.3rem;
-    }
-
-    p {
-      font-size: 13px;
-    }
-
-    hr:after{
-      background-color: #f9f4ea;
-
-    }  }
-}
 
 .icon {
   img {
@@ -318,10 +295,44 @@ h2 {
   }
   
 }
-  @media only screen and (max-width: 650px) {
+
+}
+  
+@media only screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
-    grid-row-gap: 1px;
+    grid-gap: 24px;
+    
+    .card-container{
+      width: 157px;
+      height: 274px;
+
+img{
+  width: 157px;
+  height: 100px;
+  object-fit: contain;
+}
+    }
+    .card-content {
+      width: 157px;
+    height: 174px;
+
+    h2{
+      font-size:0.938rem;
+    }
+    p{
+      font-size:0.813rem
+    }
+    .card-price {
+  hr:after{
+      background-color: #f9f4ea;
+      font-size:0.875rem
+         } 
+} 
+    }
+
+
   }
+
 `;
 
 const FilterContainer = styled.section`
@@ -329,8 +340,8 @@ const FilterContainer = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4vh;
-  margin-top: 6vh;
+  margin-bottom: 42px;
+  margin-top: 47.8px;
   button {
     height: 21px;
     margin: 1px 36.3px 0;
@@ -338,7 +349,7 @@ const FilterContainer = styled.section`
     font-size: 1.3rem;
     font-weight: 100;
     letter-spacing: 1.92px;
-    color: gray;
+    color: black;
     border: none;
     background-color: white;
     cursor: pointer;
@@ -353,18 +364,15 @@ const FilterContainer = styled.section`
 
   @media only screen and (max-width: 650px) {
     justify-content: space-evenly;
-    /* width: 80%; */
-    button {
-      height: 21px;
-      margin: 0;
-      font-family: HelveticaNeue;
-      font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    button{
+      font-size:1.063rem;
+      margin:0;
+      letter-spacing: 1.21px;
+
     }
-    button:active {
-  padding-bottom: 15px;
-  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
-  button:focus {
-    padding-bottom: 15px;
-  border-bottom: solid 1.8px rgba(222, 146, 0, 0.9);  }
-  }
+}
+
 `;
