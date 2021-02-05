@@ -15,31 +15,31 @@ const Burger: React.FC<AppProps> = (props) => {
       <ClosingMenu>
         <img
           onClick={() => setIsShown()}
-          src="../images/x.svg"
+          src="../images/x-black.svg"
           alt="burger-icon"
         ></img>
       </ClosingMenu>
       <ul>
-      <li>
+      <li className="chefs">
           <Link to="/restaurants" onClick={() => setIsShown()}>
             Chefs
           </Link>
         </li>
-        <li>
+        <li className="rest">
           <Link to="/restaurants" onClick={() => setIsShown()}>
             <h1 className="li-border">
             All Restaurants
             </h1>
           </Link>
         </li>
-        <li>
+        <li className="contact">
           <Link to="/restaurants" onClick={() => setIsShown()}>
           <span >
             Contact Us
             </span>
           </Link>
         </li>
-        <li>
+        <li className="term-of-use">
           <Link to="/restaurants" onClick={() => setIsShown()}>
           <span>
             Term Of Use
@@ -82,23 +82,38 @@ const MenuContainer = styled.div<{ isShown: boolean }>`
       list-style: none;
       text-align: center;
       font-family: HelveticaNeue;
-      font-size: 2rem;
+      font-size: 20px;
       padding: 0;
+
+      .chefs{
+        margin-top:62px;
+      }
+      .rest{
+        margin-top:48px;
+      }
+      .contact{
+        margin-bottom:48px;
+      }
+      .term-of-use{
+        margin-bottom: 49px;
+      }
     }
     li {
-      margin: 15vw;
+      /* margin: 10vw; */
       cursor: pointer;
+    
 h1 {
   font-weight: 100;
-  padding-bottom: 8vh;
+  padding-bottom: 49px;;
     border-bottom: solid 0.2px black;
+    margin-bottom:48px;
+    width: 196px;
 }
       span {
       color:gray
       }
     }
 .li-links{
-  color: red;
 }
     a:link {
       text-decoration: none;
@@ -112,17 +127,18 @@ h1 {
 `;
 
 const ClosingMenu = styled.div`
-  padding: 30px;
+    height: 45px;
   width: 100%;
-  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.3); */
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
 
   img {
     width: 16px;
     height: 16px;
     object-fit: contain;
     position: absolute;
-    top: 0px;
-    top: 4vh;
-    left: 6vw;
+ top:16px;
+ left:39px;
   }
 `;

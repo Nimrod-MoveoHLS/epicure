@@ -339,11 +339,14 @@ const Inputs = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
+    width: 100%;
+    justify-content: flex-start;
     input {
       margin-right: 16px;
       width: 23px;
       height: 23px;
     }
+    
   }
 `;
 const QuantityContainer = styled.div`
