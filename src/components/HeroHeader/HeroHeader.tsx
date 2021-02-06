@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import BackgroundImg from "../../background-image/hero-picture.png";
 import BackgroundImgMobile from "../../background-image/headerImg.png";
+import firebase from "firebase";
 import { Subject } from "rxjs";
 import {
   filter,
@@ -16,6 +17,7 @@ import {
 const HeroHeader = () => {
   const [searchKey, setSearchKey] = useState("");
   const [restaurants, setRestaurants] = useState([]);
+  const [dishes, setDishes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const subjectRef: any = useRef();
 
@@ -26,12 +28,22 @@ const HeroHeader = () => {
     subjectRef.current.next(searchKey);
   }
 
-   async function fetchData(keyword = "") {
-    const resp = await fetch("/data2.json");
+   async function fetchRestaurants(keyword = "") {
+    const resp = await fetch("/data.json");
      const data = await resp.json();
-     return data.filter((data_1:any )=> data_1.title.toLowerCase().includes(keyword.toLowerCase())
-     );
-  }
+     return data.filter((data_1:any )=> (data_1.title || data_1.dishTitle).toLowerCase().includes(keyword.toLowerCase())
+     )}
+
+  // const fetchData = async () => {
+  //   const db = firebase.firestore();
+  //   let restaurantsRef = db.collection("restaurants");
+  //   let allRestaurants = await restaurantsRef.get();
+  //   let dataArray: any = [];
+  //   for (const doc of allRestaurants.docs) {
+  //     dataArray.push({ ...doc.data(), id: doc.id });
+  //   }
+  //   setRestaurants(dataArray);
+  // };
   
   useEffect(() => {
     subjectRef.current = new Subject();
@@ -44,7 +56,7 @@ const HeroHeader = () => {
         distinctUntilChanged(),
         switchMap((keyword:any) => {
           setIsLoading(true);
-          return fetchData(keyword);
+          return fetchRestaurants(keyword);
         })
       )
       .subscribe((data:any) => {
@@ -56,6 +68,30 @@ const HeroHeader = () => {
       subscription.unsubscribe();
     };
   }, []);
+
+  // useEffect(() => {
+  //   subjectRef.current = new Subject();
+  //   const subscription = subjectRef.current
+  //     .pipe(
+  //       filter(function(text:any) {
+  //         return text.length >= 1 ; 
+  //       }),
+  //       debounceTime(250),
+  //       distinctUntilChanged(),
+  //       switchMap((keyword:any) => {
+  //         setIsLoading(true);
+  //         return fetchDishes(keyword);
+  //       })
+  //     )
+  //     .subscribe((data:any) => {
+  //       setDishes(data);
+  //       setIsLoading(false);
+  //     });
+
+  //   return () => {
+  //     subscription.unsubscribe();
+  //   };
+  // }, []);
 
   return (
     <HeroContainer BackgroundImgMobile={BackgroundImgMobile}>
@@ -73,7 +109,6 @@ const HeroHeader = () => {
         </SearchContainer>
         {searchKey && 
         <SearchResults>
-        {/* {isLoading ? "Loading" : null} */}
       <ul>
         <li className="rest-li">Restaurants</li>
         {restaurants.map((restaurant:any) => {
@@ -83,7 +118,9 @@ const HeroHeader = () => {
         })}
           <li className="dish-li">Cuisine</li>
           {restaurants.map((dish:any) => {
-          return <li key={dish.dish_id}>{dish.dish}</li>;
+          return <li> 
+          <Link key={dish.dish_id} to={`/restaurants/${dish.dish_id}`}> {dish.dishTitle}</Link>
+          </li>
         })}
       </ul>
         </SearchResults>

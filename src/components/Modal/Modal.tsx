@@ -339,10 +339,7 @@ const Inputs = styled.div`
 .checkbox-round:checked {
     background-color: black;
 }
-.checkbox-square:checked {
-  background-color: white;
-}
-}
+
   label {
     margin-top: 7px;
   }
