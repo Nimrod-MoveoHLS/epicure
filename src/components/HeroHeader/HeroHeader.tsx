@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import BackgroundImg from "../../background-image/hero-picture.png";
 import BackgroundImgMobile from "../../background-image/headerImg.png";
@@ -18,40 +19,39 @@ const HeroHeader = () => {
   const [isLoading, setIsLoading] = useState(false);
   const subjectRef: any = useRef();
 
-  function onChangeSearchKey(e: any) {
+
+  function onChangeSearchKey(e:any) {
     const searchKey = e.target.value;
     setSearchKey(searchKey);
     subjectRef.current.next(searchKey);
   }
 
-  async function fetchData(keyword = "") {
-    const response = await fetch("./data.json");
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-    return data.filter((data_1: any) =>
-      data_1.title.toLowerCase().includes(keyword.toLowerCase())
-    );
+   async function fetchData(keyword = "") {
+    const resp = await fetch("/data2.json");
+     const data = await resp.json();
+     return data.filter((data_1:any )=> data_1.title.toLowerCase().includes(keyword.toLowerCase())
+     );
   }
-
+  
   useEffect(() => {
     subjectRef.current = new Subject();
     const subscription = subjectRef.current
       .pipe(
-        filter(function (text: any) {
-          return text.length >= 2;
+        filter(function(text:any) {
+          return text.length >= 1 ; 
         }),
-        debounceTime(550),
+        debounceTime(250),
         distinctUntilChanged(),
-        switchMap((keyword: any) => {
+        switchMap((keyword:any) => {
           setIsLoading(true);
           return fetchData(keyword);
         })
       )
-      .subscribe((data: any) => {
+      .subscribe((data:any) => {
         setRestaurants(data);
         setIsLoading(false);
       });
+
     return () => {
       subscription.unsubscribe();
     };
@@ -68,21 +68,31 @@ const HeroHeader = () => {
           <input
             type="text"
             placeholder="Search for restaraunt cuisine, chef"
-            // value={searchKey} onChange={onChangeSearchKey}
+            value={searchKey} onChange={onChangeSearchKey}
           ></input>
         </SearchContainer>
-        {/* <div>
+        {searchKey && 
+        <SearchResults>
         {isLoading ? "Loading" : null}
       <ul>
-        {restaurants.map((city:any) => {
-          return <li key={city.id}>{city.title}</li>;
+        <li className="rest-li">Restaurants</li>
+        {restaurants.map((restaurant:any) => {
+          return <li>
+          <Link key={restaurant.id} to={`/restaurants/${restaurant.id}`}> {restaurant.title}</Link>
+           </li>;
+        })}
+          <li className="dish-li">Cuisine</li>
+          {restaurants.map((dish:any) => {
+          return <li key={dish.dish_id}>{dish.dish}</li>;
         })}
       </ul>
-        </div> */}
+        </SearchResults>
+      }
       </HeroContent>
     </HeroContainer>
   );
 };
+
 
 export default HeroHeader;
 
@@ -95,7 +105,7 @@ const HeroContainer = styled.div<{readonly BackgroundImgMobile:any}>`
   height: 100vh;
   width: auto;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     background-image: url("${(p) => p.BackgroundImgMobile}");
     height: 269px;
   }
@@ -115,7 +125,7 @@ const HeroContent = styled.div`
   transform: translate(-50%, -50%);
   font-size: 2rem;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     box-sizing: border-box;
     width: 89.33%;
     height: 125px;
@@ -134,7 +144,7 @@ const HeroContentHeader = styled.div`
     text-align: center;
     color: black;
   }
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     h3 {
       font-size: 1rem;
       font-weight: 100;
@@ -185,7 +195,7 @@ const SearchContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 750px) {
     width: 80.3%;
     align-items: center;
     height: 33px;
@@ -216,3 +226,80 @@ const SearchContainer = styled.div`
     }
   }
 `;
+
+
+const SearchResults = styled.div`
+color: black;
+text-align: left;
+position: absolute;
+width: 64.02%;
+z-index: 1000;
+
+    a:link {
+    text-decoration: none;
+    color: black;
+  }
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  ul {
+  list-style-type: none;
+  margin-top: 11px;
+
+  .rest-li{
+    /* margin-top:20px; */
+  opacity: 0.5;
+  }
+  .dish-li{
+    margin-top:20px;
+  opacity: 0.5;
+  }
+}
+li {
+  margin-left:57px;
+  margin-bottom:10px;
+  font-size: 15px;
+
+}
+  margin-left:18%
+;
+  height: 134px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: white;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.07px;
+  @media only screen and (max-width: 750px) {
+    height: 80px;
+    margin-left: 17.41%;
+    width: 65%;
+    
+
+
+    ul {
+  list-style-type: none;
+  
+  .rest-li{
+  opacity: 0.5;
+  
+  }
+  .dish-li{
+    margin-top:10px;
+  opacity: 0.5;
+  
+  }
+    }
+    li{
+      margin: 5px;
+      margin-left:20px;
+
+    }
+  }
+`

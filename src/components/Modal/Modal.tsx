@@ -60,11 +60,11 @@ const Modal: React.FC<ModalProps> = ({
             </RestImage>
             <ModalContent>
               <Icon>
-                <img src={dish.icon} alt={dish.alt}></img>
+                <img className="desktop-version" src={dish.icon} alt={dish.alt}></img>
                 <h2>{dish.title}</h2>
               </Icon>
               <p>{dish.body}</p>
-              <img src={dish.icon} alt={dish.alt}></img>
+              <img className="mobile-version" src={dish.icon} alt={dish.alt}></img>
             </ModalContent>
 
             <Price price={dish.price}>
@@ -128,7 +128,7 @@ const Background = styled.div`
   .top-div {
     display: none;
   }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
     height: 100%;
     .top-div {
@@ -193,7 +193,7 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
   align-items: center;
   flex-direction: column;
   margin-top: 27px;
-  img {
+  .mobile-version {
     display: none;
   }
 
@@ -217,7 +217,7 @@ const ModalContent = styled.div<{ readonly price?: number; isRest?: string }>`
   @media only screen and (max-width: 650px) {
     margin-top: 25px;
 
-    img {
+    .mobile-version {
       display: block;
       margin-bottom: 14.9px;
       width: 32px;
@@ -246,18 +246,19 @@ const Icon = styled.div`
   margin-right: 21.1px;
   margin-bottom: 14px;
 
-  img {
-    width: 39px;
+.desktop-version {
+  width: 39px;
     height: 30px;
     object-fit: contain;
     margin-right: 21.1px;
-    /* margin-left:141px; */
-  }
+}
+}
+
   @media only screen and (max-width: 650px) {
     img {
       display: none;
     }
-  }
+  
 `;
 const ContentOptionsOne = styled.div`
   margin-top: 42.5px;

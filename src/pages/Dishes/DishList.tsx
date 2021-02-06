@@ -126,10 +126,16 @@ export default DishList;
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
 width: 100%;
+margin-bottom:172px;
+@media only screen and (max-width: 650px) {
+  margin-bottom:53px;
+
+}
 `;
+
+
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -153,7 +159,7 @@ const HeaderImage = styled.div<{ readonly mobileImage?: string }>`
 const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: center;
   font-family: HelveticaNeue;
 
@@ -219,7 +225,7 @@ const IsOpen = styled.div<{ readonly isOpen?: boolean }>`
 const DishContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
     height: 100%;
     
 
@@ -255,7 +261,7 @@ const SignatureDishContainer = styled.div`
   text-align: center;
   font-family: HelveticaNeue;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
       flex-direction: column;
   width: 235.5px;
   height: 261px;
@@ -266,6 +272,7 @@ const SignatureDishContainer = styled.div`
   object-fit: contain
 } 
 .card-price {
+  margin-top: 21px;
   hr:after{
       background-color: #f9f4ea;
          } 
@@ -283,8 +290,11 @@ h2 {
     font-weight: 100;
     letter-spacing: 1.67px;
     margin-top:16px;
-    width: 80%;
-    font-size: 1.3rem;
+    width: 71%;
+    font-size: 1.219rem;
+    font-stretch: normal;
+  font-style: normal;
+  line-height: 1.31;
   }
 
 .icon {
@@ -315,14 +325,34 @@ img{
     .card-content {
       width: 157px;
     height: 174px;
+    
+    .icon {
+  img {
+    width: 23px;
+  height: 17px;
+  object-fit: contain;
+  }
+    }
 
     h2{
       font-size:0.938rem;
+      margin-top:12px;
+
     }
     p{
-      font-size:0.813rem
+      font-size:0.813rem;
+      margin-top:10px;
+
+      font-stretch: normal;
+  font-style: normal;
+  line-height: 1.31;
+  letter-spacing: 0.87px;
+  margin-bottom:10px;
+
     }
     .card-price {
+      margin-top:10px;
+
   hr:after{
       background-color: #f9f4ea;
       font-size:0.875rem
@@ -365,7 +395,7 @@ const FilterContainer = styled.section`
   @media only screen and (max-width: 650px) {
     justify-content: space-evenly;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 
     button{
       font-size:1.063rem;

@@ -108,7 +108,7 @@ h1{
 
 const RestLink = styled.div`
 margin-top: 31px;
-margin-left: 70%;
+margin-left: 69%;
 font-size: 1.875rem;
 letter-spacing: 2px;
 font-family: HelveticaNeue;
