@@ -20,11 +20,7 @@ const Home = () => {
         <h1>THE POPULAR RESTAURANTS IN EPICURE :</h1>
       </PopularHeader>
       <PopularRestaurants/>
-      <RestLink>
-      <Link to='/restaurants'>
-      All Restaurants &#62;&#62;
-          </Link>
-      </RestLink>
+
       <SignatureHeader>
         <h1>SIGNATURE DISH OF :</h1>
       </SignatureHeader>

@@ -73,22 +73,22 @@ const Modal: React.FC<ModalProps> = ({
             <ContentOptionsOne>
               <h1>Choose a side</h1>
               <Inputs>
-                <input type="checkbox" id="bread"></input>
+                <input  className="checkbox-round" type="checkbox" id="bread"></input>
                 <label htmlFor="bread">White Bread</label>
               </Inputs>
               <Inputs>
-                <input type="checkbox" id="rice"></input>
+                <input className="checkbox-round" type="checkbox" id="rice"></input>
                 <label htmlFor="rice">Sticky Rice</label>
               </Inputs>
             </ContentOptionsOne>
             <ContentOptionsTwo>
               <h1>Changes</h1>
               <Inputs>
-                <input type="checkbox" id="peanuts"></input>
+                <input className="checkbox-square" type="checkbox" id="peanuts"></input>
                 <label htmlFor="peanuts">Without Peanuts</label>
               </Inputs>
               <Inputs>
-                <input type="checkbox" id="spicy"></input>
+                <input className="checkbox-square" type="checkbox" id="spicy"></input>
                 <label htmlFor="spicy">Less Spicy</label>
               </Inputs>
             </ContentOptionsTwo>
@@ -324,6 +324,25 @@ const Inputs = styled.div`
   line-height: normal;
   letter-spacing: normal;
   margin-left: 195px;
+  .checkbox-round {
+    width: 24px;
+  height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: black;
+}
+.checkbox-square:checked {
+  background-color: white;
+}
+}
   label {
     margin-top: 7px;
   }

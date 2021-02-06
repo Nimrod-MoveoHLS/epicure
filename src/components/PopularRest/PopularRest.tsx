@@ -3,6 +3,65 @@ import styled from "styled-components";
 import Card from "../../components/Cards/Card";
 import { Link } from "react-router-dom";
 
+
+const PopularRest = () => {
+  const list = [
+    {
+      id: 1,
+      isPopular: true,
+      title: "Claro",
+      image: "../images/claro.png",
+      body: "Ran Shmueli",
+      alt: "claro-img",
+    },
+    {
+      id: 7,
+      isPopular: true,
+      title: "Lumina",
+      image: "../images/mizlala-gret-mullet-fillet.png",
+      body: "Meir Adoni",
+    },
+    {
+      id: 5,
+      isPopular: true,
+      title: "Tiger Lilly",
+      image: "../images/tiger-lili.png",
+      body: "Yanir Green",
+    },
+  ];
+
+  return (
+    <Container>
+
+   
+    <PopularRestContainer>
+      {list.map((card) => {
+        return (
+          <Link key={card.id} to={`/restaurants/${card.id}`}>
+            <Card
+              key={card.id}
+              title={card.title}
+              body={card.body}
+              img={card.image}
+              alt={card.alt}
+              isPopular={card.isPopular}
+            />
+          </Link>
+        );
+      })}
+    </PopularRestContainer>
+    <RestLink>
+      <Link to='/restaurants'>
+      All Restaurants &#62;&#62;
+          </Link>
+      </RestLink>
+    </Container>
+  );
+};
+
+export default PopularRest;
+
+
 const Container = styled.div`
 margin-right: 12.07%;
 margin-left:12.07%;
@@ -14,7 +73,7 @@ margin-left:12.07%;
 const PopularRestContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  
+
   .card-container {
     margin-right: 11px;
 
@@ -36,6 +95,7 @@ const PopularRestContainer = styled.div`
     margin: 0;
     overflow-x: auto;
     
+
     .card-container {
       width: 206px;
       height: 338px;
@@ -64,6 +124,7 @@ const PopularRestContainer = styled.div`
     }
   }
 
+
   a:link {
     text-decoration: none;
     color: black;
@@ -77,54 +138,28 @@ const PopularRestContainer = styled.div`
     color: black;
   }
 `;
-const PopularRest = () => {
-  const list = [
-    {
-      id: 1,
-      isPopular: true,
-      title: "Claro",
-      image: "../images/claro.png",
-      body: "Ran Shmueli",
-      alt: "claro-img",
-    },
-    {
-      id: 2,
-      isPopular: true,
-      title: "Lumina",
-      image: "../images/mizlala-gret-mullet-fillet.png",
-      body: "Meir Adoni",
-    },
-    {
-      id: 3,
-      isPopular: true,
-      title: "Tiger Lilly",
-      image: "../images/tiger-lili.png",
-      body: "Yanir Green",
-    },
-  ];
 
-  return (
-    <Container>
 
-   
-    <PopularRestContainer>
-      {list.map((card) => {
-        return (
-          <Link key={card.id} to={`/restaurants/${card.id}`}>
-            <Card
-              key={card.id}
-              title={card.title}
-              body={card.body}
-              img={card.image}
-              alt={card.alt}
-              isPopular={card.isPopular}
-            />
-          </Link>
-        );
-      })}
-    </PopularRestContainer>
-    </Container>
-  );
-};
+const RestLink = styled.div`
+margin-top: 31px;
+display: flex;
+justify-content: flex-end;
+font-size: 1.875rem;
+letter-spacing: 2px;
+font-family: HelveticaNeue;
+color: black;
+font-weight:500;
+a:link {
+          text-decoration: none;
+          color: black;
 
-export default PopularRest;
+}
+           a:visited {
+         text-decoration: none;
+         color: black;
+
+}
+@media only screen and (max-width: 750px) {
+    display: none;
+}
+`;

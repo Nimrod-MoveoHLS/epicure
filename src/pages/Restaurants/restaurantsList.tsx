@@ -86,6 +86,7 @@ const RestarauntContainer = styled.section`
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
+  margin-bottom:24px;
   .mobile-header{
     display: none;
   }

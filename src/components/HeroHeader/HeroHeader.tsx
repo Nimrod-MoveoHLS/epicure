@@ -73,7 +73,7 @@ const HeroHeader = () => {
         </SearchContainer>
         {searchKey && 
         <SearchResults>
-        {isLoading ? "Loading" : null}
+        {/* {isLoading ? "Loading" : null} */}
       <ul>
         <li className="rest-li">Restaurants</li>
         {restaurants.map((restaurant:any) => {

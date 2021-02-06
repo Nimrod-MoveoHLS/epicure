@@ -134,9 +134,11 @@ const SignatureDish = () => {
       title: "Garbanzo Frito",
       image: "../images/Garbanzo.png",
       body:
-      "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+      "Polenta fingers, veal cheek,magic chili cured lemon cream, yellow laksa",
       alt: "Garbanzo Frito",
       price: 98,
+      icon: "../images/vegetarian.svg",
+
     },
     {
       id: 7,
