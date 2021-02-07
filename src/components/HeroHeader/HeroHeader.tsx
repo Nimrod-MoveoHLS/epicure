@@ -77,14 +77,14 @@ const HeroHeader = () => {
       <ul>
         <li className="rest-li">Restaurants</li>
         {restaurants.map((restaurant:any) => {
-          return <li>
-          <Link key={restaurant.id} to={`/restaurants/${restaurant.id}`}> {restaurant.title}</Link>
+          return <li key={restaurant.id}>
+          <Link  to={`/restaurants/${restaurant.id}`}> {restaurant.title}</Link>
            </li>;
         })}
           <li className="dish-li">Cuisine</li>
           {restaurants.map((dish:any) => {
-          return <li> 
-          <Link key={dish.dish_id} to={`/restaurants/${dish.dish_id}`}> {dish.dishTitle}</Link>
+          return <li key={dish.dish_id}> 
+          <Link  to={`/restaurants/${dish.dish_id}`}> {dish.dishTitle}</Link>
           </li>
         })}
       </ul>
@@ -236,7 +236,6 @@ text-align: left;
 position: absolute;
 width: 64.02%;
 z-index: 1000;
-
     a:link {
     text-decoration: none;
     color: black;
@@ -252,7 +251,6 @@ z-index: 1000;
   ul {
   list-style-type: none;
   margin-top: 11px;
-
   .rest-li{
     /* margin-top:20px; */
   opacity: 0.5;
@@ -282,9 +280,6 @@ li {
     height: 80px;
     margin-left: 17.41%;
     width: 65%;
-    
-
-
     ul {
   list-style-type: none;
   
@@ -301,6 +296,7 @@ li {
     li{
       margin: 5px;
       margin-left:20px;
+      font-size: 9px;
 
     }
   }

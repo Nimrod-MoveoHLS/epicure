@@ -92,7 +92,7 @@ function DishList({ match }: RouteComponentProps<any>) {
           </IsOpen>
       <FilterContainer>
         <button value="breakfest" onClick={(e) => filterHandler(e)} >Breakfest</button>
-        <button value="launch" onClick={(e) => filterHandler(e)}>Launch</button>
+        <button value="launch" onClick={(e) => filterHandler(e)}>Lunch</button>
         <button value="dinner" onClick={(e) => filterHandler(e)}>Dinner</button>
       </FilterContainer>
       <SignatureDishContainer>

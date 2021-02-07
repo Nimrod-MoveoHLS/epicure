@@ -39,6 +39,10 @@ const SignatureDishContainer = styled.div`
     .card-price {
       margin-bottom: 11px;
       font-size: 1.556rem;
+      hr{
+        width: 291px;
+
+      }
       hr:after{
         font-size: 1.556rem;
   font-weight: 100;
@@ -111,6 +115,7 @@ const SignatureDishContainer = styled.div`
     margin-bottom: 6.9px;
       hr{
 /* background-color: black; */
+width:195px;
       }
       hr:after{
         background-color: #f7e0b2;
