@@ -153,7 +153,7 @@ const Background = styled.div`
 `;
 const ModalContainer = styled.div`
   background-color: white;
-  height: 1098px;
+  height: 1110px;
   width: 608px;
   /* justify-content: center ; */
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
@@ -434,8 +434,10 @@ const Price = styled.div<{ price: number }>`
   hr:after {
     background-color: white;
     content: "₪${(p) => p.price}";
-    font-size: 1.2rem;
-    padding: 0 4px;
+    font-size: 1.506rem;
+  font-weight: 500;
+  letter-spacing: 1.03px;
+      padding: 0 4px;
     position: relative;
     top: -13px;
   }
@@ -445,6 +447,10 @@ const Price = styled.div<{ price: number }>`
     }
     hr:after {
       padding: 0 23px;
+      font-size: 1.225rem;
+  font-weight: 500;
+
+  letter-spacing: 0.84px;
     }
   }
 `;
@@ -456,12 +462,14 @@ const AddButton = styled.button`
   background-color: black;
   cursor: pointer;
   margin-left: 208px;
+
   h1 {
     font-family: HelveticaNeue;
     font-size: 18.9px;
     letter-spacing: 1.08px;
     text-align: center;
     color: white;
+    
   }
   @media only screen and (max-width: 650px) {
     width: 196px;

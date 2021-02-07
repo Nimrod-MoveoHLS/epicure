@@ -275,6 +275,8 @@ const SignatureDishContainer = styled.div`
   margin-top: 21px;
   hr:after{
       background-color: #f9f4ea;
+      font-size: 1.313rem;
+
          } 
 } 
 h2 {

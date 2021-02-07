@@ -12,7 +12,6 @@ import {
   distinctUntilChanged,
   switchMap,
 } from "rxjs/operators";
-// import { fetchData } from "./api";
 
 const HeroHeader = () => {
   const [searchKey, setSearchKey] = useState("");
@@ -28,23 +27,13 @@ const HeroHeader = () => {
     subjectRef.current.next(searchKey);
   }
 
-   async function fetchRestaurants(keyword = "") {
+   async function fetchData(keyword = "") {
     const resp = await fetch("/data.json");
      const data = await resp.json();
      return data.filter((data_1:any )=> (data_1.title || data_1.dishTitle).toLowerCase().includes(keyword.toLowerCase())
      )}
 
-  // const fetchData = async () => {
-  //   const db = firebase.firestore();
-  //   let restaurantsRef = db.collection("restaurants");
-  //   let allRestaurants = await restaurantsRef.get();
-  //   let dataArray: any = [];
-  //   for (const doc of allRestaurants.docs) {
-  //     dataArray.push({ ...doc.data(), id: doc.id });
-  //   }
-  //   setRestaurants(dataArray);
-  // };
-  
+
   useEffect(() => {
     subjectRef.current = new Subject();
     const subscription = subjectRef.current
@@ -56,7 +45,7 @@ const HeroHeader = () => {
         distinctUntilChanged(),
         switchMap((keyword:any) => {
           setIsLoading(true);
-          return fetchRestaurants(keyword);
+          return fetchData(keyword);
         })
       )
       .subscribe((data:any) => {
@@ -68,30 +57,6 @@ const HeroHeader = () => {
       subscription.unsubscribe();
     };
   }, []);
-
-  // useEffect(() => {
-  //   subjectRef.current = new Subject();
-  //   const subscription = subjectRef.current
-  //     .pipe(
-  //       filter(function(text:any) {
-  //         return text.length >= 1 ; 
-  //       }),
-  //       debounceTime(250),
-  //       distinctUntilChanged(),
-  //       switchMap((keyword:any) => {
-  //         setIsLoading(true);
-  //         return fetchDishes(keyword);
-  //       })
-  //     )
-  //     .subscribe((data:any) => {
-  //       setDishes(data);
-  //       setIsLoading(false);
-  //     });
-
-  //   return () => {
-  //     subscription.unsubscribe();
-  //   };
-  // }, []);
 
   return (
     <HeroContainer BackgroundImgMobile={BackgroundImgMobile}>

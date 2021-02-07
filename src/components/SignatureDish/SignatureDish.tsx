@@ -39,6 +39,14 @@ const SignatureDishContainer = styled.div`
     .card-price {
       margin-bottom: 11px;
       font-size: 1.556rem;
+      hr:after{
+        font-size: 1.556rem;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.66px;
+      }
     }
   }
 
@@ -106,8 +114,9 @@ const SignatureDishContainer = styled.div`
       }
       hr:after{
         background-color: #f7e0b2;
-        font-size: 1.563rem;
-;
+        font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1.67px;;
       }
     }
     }
